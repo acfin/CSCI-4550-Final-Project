@@ -14,7 +14,7 @@ public abstract class Weapon : MonoBehaviour
     public float baseDespawnTime;
     
     // Updated Variables depending on weapon level.
-    public float damage => baseDamage * level;
+    public int damage => baseDamage * level;
     public float fireRate => baseFireRate;
     public float projectileSpeed => baseProjectileSpeed + level * 1.2f;
     public float despawnTime => baseDespawnTime;

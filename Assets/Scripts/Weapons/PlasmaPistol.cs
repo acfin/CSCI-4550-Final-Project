@@ -29,7 +29,11 @@ public class PlasmaPistol : Weapon
             Rigidbody projectileRigidbody = projectileInstance.GetComponent<Rigidbody>();
             projectileRigidbody.velocity = fireDirection * Vector3.forward * projectileSpeed;
 
-            StartCoroutine(DespawnProjectileAfterTime(projectileInstance, despawnTime));
+            PlasmaProjectile plasmaProjectile = projectileInstance.GetComponent<PlasmaProjectile>();
+            if (plasmaProjectile != null)
+            {
+                plasmaProjectile.InitializeProjectile(damage, despawnTime);
+            }
         }
     }
     private void SetFireDirections()
