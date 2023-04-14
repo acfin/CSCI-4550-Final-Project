@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2494582264166593126, guid: 40b927b55051fed4184e4e1ed8fdde5c,
     type: 3}
-  damage: 1
-  fireRate: 2
-  projectileSpeed: 6
-  despawnTime: 4
+  weaponName: PlasmaPistol
+  level: 1
+  baseDamage: 1
+  baseFireRate: 3
+  baseProjectileSpeed: 10
+  baseDespawnTime: 12

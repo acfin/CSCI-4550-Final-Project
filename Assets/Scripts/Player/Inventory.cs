@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,9 @@ public class Inventory : MonoBehaviour
     public int weaponCapacity = 3;
     public int passiveCapacity = 3;
 
-    public Weapon startingWeapon; 
+    public Weapon startingWeapon;
+
+    public bool test = false;
     
     private List<Weapon> weapons;
     private List<Passive> passives;
@@ -18,14 +21,20 @@ public class Inventory : MonoBehaviour
         passives = new List<Passive>();
         AddWeapon(startingWeapon);
     }
-
+    
     // Add Weapon to inventory. 
     public bool AddWeapon(Weapon weapon)
     {
+        Weapon existingWeapon = weapons.Find(w => w.weaponName == weapon.weaponName);
+        if (existingWeapon != null)
+        {
+            existingWeapon.Upgrade();
+            return true;
+        }
         if (weapons.Count < weaponCapacity)
         {
-            weapons.Add(weapon);
             Weapon newWeapon = Instantiate(weapon, player.transform.position, player.transform.rotation, player.transform);
+            weapons.Add(newWeapon);
             return true;
         }
         else
