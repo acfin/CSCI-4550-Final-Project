@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 7643240703406131071, guid: 696adb2f4c6e0c2499660e13461a823d,
     type: 3}
-  weaponName: SawLauncher
+  weaponName: Saw Launcher
   level: 1
   baseDamage: 1
   baseFireRate: 3

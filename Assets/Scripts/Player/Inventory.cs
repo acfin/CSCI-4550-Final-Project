@@ -8,12 +8,11 @@ public class Inventory : MonoBehaviour
     public int passiveCapacity = 3;
 
     public Weapon startingWeapon;
-
-    public bool test = false;
+    public GameObject player;
     
     private List<Weapon> weapons;
     private List<Passive> passives;
-    public GameObject player;
+    public PlayerStats playerStats;
 
     void Start()
     {
@@ -43,18 +42,50 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    // Add Passive to inventory. Set to cap of 3
-    // TODO: When level-up system is implemented do not show new passives on level-up if cap is reached.
+    // Add Passive to inventory. 
     public bool AddPassive(Passive passive)
     {
+        Passive existingPassive = passives.Find(p => p.passiveName == passive.passiveName);
+        if (existingPassive != null)
+        {
+            Debug.Log("Upgrade?");
+            existingPassive.Upgrade();
+            PassiveUpgrade(existingPassive);
+            return true;
+        }
         if (passives.Count < passiveCapacity)
         {
-            passives.Add(passive);
+            Passive newPassive = Instantiate(passive, player.transform.position, player.transform.rotation, player.transform);
+            passives.Add(newPassive);
+            PassiveUpgrade(newPassive);
             return true;
         }
         else
         {
             return false;
+        }
+    }
+
+    
+    public bool ContainsWeapon(Weapon weapon)
+    {
+        return weapons.Exists(w => w.weaponName == weapon.weaponName);
+    }
+
+    public bool ContainsPassive(Passive passive)
+    {
+        return passives.Exists(p => p.passiveName == passive.passiveName);
+    }
+    
+    public void PassiveUpgrade(Passive passive)
+    {
+        // Apply passive to player stat if applicable.
+        passive.ApplyEffect(playerStats);
+
+        // Apply passive effect on each weapon in the player's inventory
+        foreach (Weapon weapon in weapons)
+        {
+            passive.ApplyEffect(weapon);
         }
     }
 

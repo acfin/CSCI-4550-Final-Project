@@ -3752,6 +3752,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5861888228449075290, guid: fb48b051319da124ca64720b608d4e14,
         type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1994047200}
+    - target: {fileID: 5861888228449075290, guid: fb48b051319da124ca64720b608d4e14,
+        type: 3}
       propertyPath: startingWeapon
       value: 
       objectReference: {fileID: 1635560974093710476, guid: 0f5dd183509a3ba4c9773e01743d3628,
@@ -3778,6 +3783,11 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5861888228449075293, guid: fb48b051319da124ca64720b608d4e14,
+        type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1994047200}
     - target: {fileID: 5861888228449075295, guid: fb48b051319da124ca64720b608d4e14,
         type: 3}
       propertyPath: m_RootOrder
@@ -7455,8 +7465,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 12bb9293068adf94bb41f48785312435, type: 2}
+  m_sharedMaterial: {fileID: 7113139457886329311, guid: 12bb9293068adf94bb41f48785312435,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8748,8 +8759,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 12bb9293068adf94bb41f48785312435, type: 2}
+  m_sharedMaterial: {fileID: 7113139457886329311, guid: 12bb9293068adf94bb41f48785312435,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10199,8 +10211,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 12bb9293068adf94bb41f48785312435, type: 2}
+  m_sharedMaterial: {fileID: 7113139457886329311, guid: 12bb9293068adf94bb41f48785312435,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12464,6 +12477,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   experience: 0
+  speed: 5
+  maxHealth: 10
+  healthRegenRate: 1
   OnLevelUp:
     m_PersistentCalls:
       m_Calls: []
@@ -12487,7 +12503,12 @@ MonoBehaviour:
   weaponList:
   - {fileID: 2948022306051118127, guid: 63bc0233babbfd14fb12b71022e475f3, type: 3}
   - {fileID: 1635560974093710476, guid: 0f5dd183509a3ba4c9773e01743d3628, type: 3}
-  passiveList: []
+  passiveList:
+  - {fileID: 6588133178571996506, guid: 9381979ace8fe88458f41e7bd8ad3f49, type: 3}
+  - {fileID: 758704286287200358, guid: 99165914ec813c34db975b348a709212, type: 3}
+  - {fileID: 6362915767328024587, guid: 5ed77257faf7fce4f840e6d0acdfc3cf, type: 3}
+  - {fileID: 5663164270708629439, guid: 2b8d7291ca97a1b4bb55278cba69a869, type: 3}
+  - {fileID: 860064724622240382, guid: c9e4ef1dcd151174db5c60ba640d6d4f, type: 3}
   inventory: {fileID: 454570094}
 --- !u!1001 &2010242112
 PrefabInstance:

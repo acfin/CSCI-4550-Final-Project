@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    public PlayerStats playerStats;
     public float speed = 5f;
     private Rigidbody rb;
     private Vector3 moveDirection;
@@ -13,6 +14,7 @@ public class MovementController : MonoBehaviour
 
     void Update()
     {
+        speed = playerStats.speed;
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
