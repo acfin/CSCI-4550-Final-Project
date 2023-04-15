@@ -7,6 +7,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected GameObject projectilePrefab;
     public string weaponName;
     public int level = 1;
+    public int maxLevel = 7;
     // Base Values
     public int baseDamage;
     public float baseFireRate;
@@ -32,7 +33,7 @@ public abstract class Weapon : MonoBehaviour
     
     public void Upgrade()
     {
-        if(level < 7)
+        if(level < maxLevel)
         {
             level++;
             Debug.Log("test");

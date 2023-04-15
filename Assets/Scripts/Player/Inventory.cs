@@ -77,6 +77,24 @@ public class Inventory : MonoBehaviour
         return passives.Exists(p => p.passiveName == passive.passiveName);
     }
     
+    public bool IsWeaponAtMaxLevel(Weapon weaponTemplate)
+    {
+        Weapon weaponInInventory = weapons.Find(w => w.weaponName == weaponTemplate.weaponName);
+        return weaponInInventory != null && weaponInInventory.level >= weaponInInventory.maxLevel;
+    }
+
+    public bool IsPassiveAtMaxLevel(Passive passiveTemplate)
+    {
+        Passive passiveInInventory = passives.Find(p => p.passiveName == passiveTemplate.passiveName);
+        return passiveInInventory != null && passiveInInventory.level >= passiveInInventory.maxLevel;
+    }
+    
+    public bool AreAllItemsAtMaxLevel()
+    {
+        return weapons.TrueForAll(weapon => weapon.level >= weapon.maxLevel) &&
+               passives.TrueForAll(passive => passive.level >= passive.maxLevel);
+    }
+    
     public void PassiveUpgrade(Passive passive)
     {
         // Apply passive to player stat if applicable.

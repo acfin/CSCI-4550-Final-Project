@@ -24,36 +24,45 @@ public class LevelUp : MonoBehaviour
 
     public void ShowLevelUpOptions()
     {
+        // Do not show level up options if all items are at max level
+        if (inventory.AreAllItemsAtMaxLevel())
+        {
+            return; 
+        }
         levelUpPanel.SetActive(true);
         Time.timeScale = 0f;
 
         List<Object> options = new List<Object>(weaponList.Count + passiveList.Count);
-        
+
+        // Only include weapons/passives in the available upgrade options list if they are not at max level.
+        List<Weapon> filteredWeaponList = weaponList.FindAll(weapon => !inventory.IsWeaponAtMaxLevel(weapon));
+        List<Passive> filteredPassiveList = passiveList.FindAll(passive => !inventory.IsPassiveAtMaxLevel(passive));
+
         // If the inventory is at weapon cap, do not show new weapons. Shows passives that may be new.
         if (inventory.GetWeapons().Count >= inventory.weaponCapacity)
         {
-            options.AddRange(weaponList.FindAll(weapon => inventory.ContainsWeapon(weapon)));
-            options.AddRange(passiveList);
+            options.AddRange(filteredWeaponList.FindAll(weapon => inventory.ContainsWeapon(weapon)));
+            options.AddRange(filteredPassiveList);
         }
         // If the inventory is at passive cap, do not show new passives. Shows weapons that may be new.
         else if (inventory.GetPassives().Count >= inventory.passiveCapacity)
         {
-            options.AddRange(passiveList.FindAll(passive => inventory.ContainsPassive(passive)));
-            options.AddRange(weaponList);
+            options.AddRange(filteredPassiveList.FindAll(passive => inventory.ContainsPassive(passive)));
+            options.AddRange(filteredWeaponList);
         }
         // If the inventory is at weapon cap & passive cap, do not show new passives or weapons.
         else if (inventory.GetPassives().Count >= inventory.passiveCapacity &&
                  inventory.GetWeapons().Count >= inventory.weaponCapacity)
         {
-            options.AddRange(passiveList.FindAll(passive => inventory.ContainsPassive(passive)));
-            options.AddRange(weaponList.FindAll(weapon => inventory.ContainsWeapon(weapon)));
+            options.AddRange(filteredPassiveList.FindAll(passive => inventory.ContainsPassive(passive)));
+            options.AddRange(filteredWeaponList.FindAll(weapon => inventory.ContainsWeapon(weapon)));
         }
         else
         {
-            options.AddRange(weaponList);
-            options.AddRange(passiveList);
+            options.AddRange(filteredWeaponList);
+            options.AddRange(filteredPassiveList);
         }
-        
+
         for (int i = 0; i < optionButtons.Length; i++)
         {
             int randomIndex = Random.Range(0, options.Count);
@@ -74,6 +83,8 @@ public class LevelUp : MonoBehaviour
             }
         }
     }
+
+
 
     public void SelectOption(Object option)
     {

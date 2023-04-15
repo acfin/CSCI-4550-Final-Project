@@ -10,7 +10,7 @@ public abstract class Passive : MonoBehaviour
     
     public void Upgrade()
     {
-        if(level < 5)
+        if(level < maxLevel)
         {
             level++;
             Debug.Log("passive levelup");
