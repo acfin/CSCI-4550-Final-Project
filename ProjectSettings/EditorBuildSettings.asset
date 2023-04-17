@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Sci-Fi Styled Modular Pack/Example scenes/outpost on desert.unity
-    guid: b42ca4c5c936383429d2318c931f7ad2
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9c5ebf1a27c86554fbc70fd9ae26751f
+  - enabled: 1
+    path: Assets/Scenes/CoraScene.unity
+    guid: 357b35cc94d62cc458ee1cc8c0e5f153
   m_configObjects: {}
