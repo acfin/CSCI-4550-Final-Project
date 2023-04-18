@@ -25,7 +25,7 @@ public class PlasmaProjectile : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            //other.GetComponent<Enemy>().TakeDamage(damage);
+            other.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

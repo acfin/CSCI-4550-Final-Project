@@ -48,7 +48,6 @@ public class Inventory : MonoBehaviour
         Passive existingPassive = passives.Find(p => p.passiveName == passive.passiveName);
         if (existingPassive != null)
         {
-            Debug.Log("Upgrade?");
             existingPassive.Upgrade();
             PassiveUpgrade(existingPassive);
             return true;
