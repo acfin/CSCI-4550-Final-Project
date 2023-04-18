@@ -23,8 +23,10 @@ public class PlasmaProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("test 1");
         if (other.CompareTag("Enemy"))
         {
+            Debug.Log("test 2");
             other.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(gameObject);
         }
