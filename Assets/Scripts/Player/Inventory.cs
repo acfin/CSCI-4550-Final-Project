@@ -6,8 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public int weaponCapacity = 3;
     public int passiveCapacity = 3;
-
-    public Weapon startingWeapon;
+    
     public GameObject player;
     
     private List<Weapon> weapons;
@@ -18,7 +17,11 @@ public class Inventory : MonoBehaviour
     {
         weapons = new List<Weapon>();
         passives = new List<Passive>();
-        AddWeapon(startingWeapon);
+        StartingWeapon selectedWeapon = FindObjectOfType<StartingWeapon>();
+        if (selectedWeapon != null)
+        {
+            AddWeapon(selectedWeapon.selectedWeapon);
+        }
     }
     
     // Add Weapon to inventory. 
