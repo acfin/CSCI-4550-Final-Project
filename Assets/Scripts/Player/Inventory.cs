@@ -8,10 +8,11 @@ public class Inventory : MonoBehaviour
     public int passiveCapacity = 3;
     
     public GameObject player;
-    
     private List<Weapon> weapons;
     private List<Passive> passives;
     public PlayerStats playerStats;
+
+    public Weapon defaultWeapon;
 
     void Start()
     {
@@ -21,6 +22,10 @@ public class Inventory : MonoBehaviour
         if (selectedWeapon != null)
         {
             AddWeapon(selectedWeapon.selectedWeapon);
+        }
+        else if(selectedWeapon == null)
+        {
+            AddWeapon(defaultWeapon);
         }
     }
     

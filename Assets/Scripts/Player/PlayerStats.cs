@@ -19,12 +19,14 @@ public class PlayerStats : MonoBehaviour
     public GameObject player;
 
     public UnityEvent OnLevelUp;
+    private DamageTextManager damageTextManager;
 
     public int GetExperienceToLevelUp(int currentLevel) => 100 + (int)((currentLevel - 1) * 150);
 
     public void Start()
     {
         health = maxHealth;
+        damageTextManager = player.GetComponent<DamageTextManager>();
     }
 
     public void Update()
@@ -53,10 +55,15 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        
         if (!isInvincible)
         {
             health -= damage;
 
+            if (damageTextManager)
+            {
+                damageTextManager.DisplayDamage(damage);
+            }
             if (health <= 0)
             {
                 // Handle game over here.

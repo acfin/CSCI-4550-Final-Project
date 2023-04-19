@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Pickup
   - PlayerStats
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -5,15 +5,15 @@ using TMPro;
 
 public class DamageTextManager : MonoBehaviour
 {
-    public GameObject damageTextPrefab, enemyInstance;
-    public string textToDisplay;
-
-    void Update()
+    public GameObject damageTextPrefab;
+    public Color textColor;
+    
+    public void DisplayDamage(int damage)
     {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            GameObject DamageText = Instantiate(damageTextPrefab, enemyInstance.transform);
-            DamageText.transform.GetChild(0).GetComponent<TextMeshPro>().SetText(textToDisplay);
-        }
+        // Random Position to prevent number overlapping
+        Vector3 randomPos = new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y, transform.position.y);
+        GameObject DamageText = Instantiate(damageTextPrefab, randomPos, Quaternion.Euler(0f, 0f, 0f));
+        DamageText.transform.GetChild(0).GetComponent<TextMeshPro>().SetText(damage.ToString());
+        DamageText.transform.GetChild(0).GetComponent<TextMeshPro>().faceColor = textColor;
     }
 }

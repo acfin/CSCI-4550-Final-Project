@@ -36,7 +36,6 @@ public abstract class Weapon : MonoBehaviour
         if(level < maxLevel)
         {
             level++;
-            Debug.Log("test");
         }
     }
 }
