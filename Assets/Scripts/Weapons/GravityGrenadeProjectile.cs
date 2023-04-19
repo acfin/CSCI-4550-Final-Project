@@ -38,7 +38,7 @@ public class GravityGrenadeProjectile : MonoBehaviour
             Destroy(gameObject);
         }
         // Add a small delay between the explosion effect and damaging the enemies.
-        else if (Time.time > spawnTime + explodeTime - .5f && !explodedEffect)
+        else if (Time.time > spawnTime + explodeTime - .15f && !explodedEffect)
         {
             explodedEffect = true;
             ExplodeEffect();

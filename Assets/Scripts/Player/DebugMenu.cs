@@ -6,6 +6,9 @@ public class DebugMenu : MonoBehaviour
 {
     public PlasmaPistol plasmaPistol;
     public Inventory inventory;
+    public EnemySpawner enemySpawner;
+    public GameObject wave1Prefab;
+    public GameObject wave2Prefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +24,14 @@ public class DebugMenu : MonoBehaviour
     public void AddPlasmaPistol()
     {
         inventory.AddWeapon(plasmaPistol);
+    }
+
+    public void SpawnWave1()
+    {
+        enemySpawner.SpawnEnemy(wave1Prefab);
+    }
+    public void SpawnWave2()
+    {
+        enemySpawner.SpawnEnemy(wave2Prefab);
     }
 }

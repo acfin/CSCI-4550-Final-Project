@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,12 +9,16 @@ public class Enemy : MonoBehaviour
     public int Damage = 1;
     public int ExpGiven = 50;
     public float movementSpeed = 3f;
+    
     private GameObject player;
     private DamageTextManager damageTextManager;
+    private NavMeshAgent navMeshAgent;
     public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         damageTextManager = GetComponent<DamageTextManager>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.speed = movementSpeed;
     }
 
     public void Update()
@@ -63,23 +68,31 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+    
+    
     private void MoveTowardsPlayer()
     {
         if (player != null)
         {
+            navMeshAgent.SetDestination(player.transform.position);
+        }
+    }
+    
+    // Old movement function, NavMesh seems to accomplish our movement better.
+    /*private void MoveTowardsPlayer()
+    {
+        if (player != null)
+        {
             Vector3 direction = (player.transform.position - transform.position).normalized;
+
+            // Make the enemy face the player
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
             Vector3 movement = direction * movementSpeed * Time.deltaTime;
             transform.position += movement;
         }
-    }
+    }*/
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            // Move up or down along the y-axis
-            float verticalDirection = UnityEngine.Random.Range(-1f, 1f);
-            transform.position += new Vector3(0, verticalDirection * movementSpeed * Time.deltaTime, 0);
-        }
-    }
+    
 }
