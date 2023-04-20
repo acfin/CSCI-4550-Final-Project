@@ -21,7 +21,7 @@ public class SawLauncher : Weapon
         {
             Vector3 fireDirection = Quaternion.Euler(0, Random.Range(-coneAngle / 2, coneAngle / 2), 0) * transform.forward;
 
-            GameObject sawProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.LookRotation(fireDirection));
+            GameObject sawProjectile = Instantiate(projectilePrefab, transform.position + Vector3.up * .5f, Quaternion.LookRotation(fireDirection));
             sawProjectile.GetComponent<Rigidbody>().velocity = fireDirection * projectileSpeed;
             sawProjectile.GetComponent<SawProjectile>().InitializeProjectile(damage, despawnTime);
         }

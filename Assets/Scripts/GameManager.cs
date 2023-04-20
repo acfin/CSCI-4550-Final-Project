@@ -1,16 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
-using UnityEngine.UIElements;
 
+[Serializable]
+public class WaveData
+{
+    public GameObject enemyPrefab;
+    public int numberOfEnemies;
+}
 public class GameManager : MonoBehaviour
 {
     public EnemySpawner enemySpawner;
-    public GameObject[] waveEnemy;
-    public int[] numOfEnemies;
+    public List<WaveData> waveData;
     public int waveLength = 60;
     public int waveNum = 0;
+    private bool victory = false;
     
     // Start is called before the first frame update
     void Start()
@@ -18,18 +23,28 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartWave());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator StartWave()
     {
-        if(waveNum <= waveEnemy.Length);
-        {
-            enemySpawner.SpawnEnemy(waveEnemy[waveNum], numOfEnemies[waveNum]);
-            yield return new WaitForSeconds(waveLength);
-        }
+        while (!victory)
+            if (waveNum < waveData.Count)
+            {
+                // Wave 5 Boss
+                if (waveNum == 4)
+                {
+                    // Spawn Wave 5 Boss Enemy
+                }
+                Debug.Log("waveEnemy.Length");
+                Debug.Log("Spawning Wave: " + waveNum);
+                enemySpawner.SpawnEnemy(waveData[waveNum].enemyPrefab, waveData[waveNum].numberOfEnemies);
+                yield return new WaitForSeconds(waveLength);
+                waveNum++; 
+            }
+            // Last wave
+            else if (waveNum == waveData.Count)
+            {
+                yield return new WaitForSeconds(waveLength);
+                victory = true;
+                // TODO: Victory screen
+            }
     }
 }

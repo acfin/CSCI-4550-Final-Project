@@ -26,14 +26,14 @@ public class EnemySpawner : MonoBehaviour
                 Vector3 spawnPosition = GetRandomSpawnPosition();
                 Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.02f);
         }
     }
 
-    public void SpawnEnemy(GameObject enemyPrefab, int enemies = 10)
+    public void SpawnEnemy(GameObject ePrefab, int enemiesCount)
     {
-        this.maxNumberOfEnemies = enemies;
-        this.enemyPrefab = enemyPrefab;
+        maxNumberOfEnemies = enemiesCount;
+        enemyPrefab = ePrefab;
     }
     
 
@@ -54,6 +54,7 @@ public class EnemySpawner : MonoBehaviour
             }
         }
         BoxCollider selectedZone;
+        
         // Prevents an enemy from spawning in the same BoxCollider as the player
         do
         {
