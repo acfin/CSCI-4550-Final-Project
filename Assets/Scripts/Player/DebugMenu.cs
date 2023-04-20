@@ -28,10 +28,10 @@ public class DebugMenu : MonoBehaviour
 
     public void SpawnWave1()
     {
-        enemySpawner.SpawnEnemy(wave1Prefab);
+        enemySpawner.SpawnEnemy(wave1Prefab, 5);
     }
     public void SpawnWave2()
     {
-        enemySpawner.SpawnEnemy(wave2Prefab);
+        enemySpawner.SpawnEnemy(wave2Prefab, 10);
     }
 }

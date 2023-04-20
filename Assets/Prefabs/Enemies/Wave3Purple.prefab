@@ -773,6 +773,10 @@ GameObject:
   - component: {fileID: 4673369876368086}
   - component: {fileID: 95980759410839360}
   - component: {fileID: -8379372814166001853}
+  - component: {fileID: 7539189514559878145}
+  - component: {fileID: 352978585138434912}
+  - component: {fileID: 7647943411660734839}
+  - component: {fileID: 4409053277856793721}
   m_Layer: 9
   m_Name: Wave3Purple
   m_TagString: Enemy
@@ -856,6 +860,66 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 1
+--- !u!54 &7539189514559878145
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462720695320296}
+  serializedVersion: 2
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!65 &352978585138434912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462720695320296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 1.5, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &7647943411660734839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462720695320296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b3b6371bbec7e4bb5ad475f762d5cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 15
+  Damage: 6
+  ExpGiven: 75
+  movementSpeed: 2.5
+--- !u!114 &4409053277856793721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462720695320296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca16e6533b657f479c0af9efa12a7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTextPrefab: {fileID: 7968853116395584448, guid: 869f903f684f86a4e885db7cc00dfd00,
+    type: 3}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1486048802852170
 GameObject:
   m_ObjectHideFlags: 0

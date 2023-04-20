@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plasmaPistol: {fileID: 2948022306051118127, guid: 63bc0233babbfd14fb12b71022e475f3,
     type: 3}
-  inventory: {fileID: 0}
+  inventory: {fileID: 1470397861}
   enemySpawner: {fileID: 873241267}
   wave1Prefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d,
     type: 3}
@@ -1669,11 +1669,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawner: {fileID: 873241267}
-  waveEnemy:
-  - {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d, type: 3}
-  - {fileID: 9196879129935289235, guid: 2265be590d199f044a43d37ac0a89df6, type: 3}
-  - {fileID: 1462720695320296, guid: e9a03d46b76afe246a9ffd58d255bb65, type: 3}
-  numOfEnemies: 050000000a0000000f000000
+  waveData:
+  - enemyPrefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d,
+      type: 3}
+    numberOfEnemies: 5
+  - enemyPrefab: {fileID: 9196879129935289235, guid: 2265be590d199f044a43d37ac0a89df6,
+      type: 3}
+    numberOfEnemies: 10
+  - enemyPrefab: {fileID: 1462720695320296, guid: e9a03d46b76afe246a9ffd58d255bb65,
+      type: 3}
+    numberOfEnemies: 15
   waveLength: 60
   waveNum: 0
 --- !u!4 &1296338620
@@ -2056,19 +2061,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: a55b75e1bbafd1241b488997bb65464c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.62
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: a55b75e1bbafd1241b488997bb65464c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.26
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: a55b75e1bbafd1241b488997bb65464c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.22
+      value: -4.89
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: a55b75e1bbafd1241b488997bb65464c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: a55b75e1bbafd1241b488997bb65464c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2076,7 +2081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: a55b75e1bbafd1241b488997bb65464c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: a55b75e1bbafd1241b488997bb65464c, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2088,7 +2093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: a55b75e1bbafd1241b488997bb65464c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: a55b75e1bbafd1241b488997bb65464c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2154,7 +2159,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1470397858
 MonoBehaviour:
@@ -2201,7 +2206,7 @@ MonoBehaviour:
   passiveCapacity: 3
   player: {fileID: 1470397853}
   playerStats: {fileID: 1994047200}
-  defaultWeapon: {fileID: 6069094661596690049, guid: 1d90ae2020604a24cbc6b3a939b7c535,
+  defaultWeapon: {fileID: 2948022306051118127, guid: 63bc0233babbfd14fb12b71022e475f3,
     type: 3}
 --- !u!1 &1525888868
 GameObject:
@@ -2997,7 +3002,7 @@ MonoBehaviour:
   health: 0
   isInvincible: 0
   invincibleDur: 1
-  healthRegenRate: 2
+  healthRegenRate: 1
   player: {fileID: 1470397853}
   OnLevelUp:
     m_PersistentCalls:
@@ -6718,6 +6723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520390767602710399, guid: 7fadc2cf137fed24c90857d37e9553c6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: 4520390767602932733, guid: 7fadc2cf137fed24c90857d37e9553c6,
         type: 3}

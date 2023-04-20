@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     public int health;
     public bool isInvincible = false;
     public float invincibleDur = 1f;
-    public float healthRegenRate = 1f;
+    public int healthRegenRate = 1;
 
     public GameObject player;
 
@@ -29,6 +29,7 @@ public class PlayerStats : MonoBehaviour
         health = maxHealth;
         damageTextManager = player.GetComponent<DamageTextManager>();
         animator = player.GetComponent<Animator>();
+        StartCoroutine(RegenRoutine());
     }
 
     public void AddExperience(int exp)
@@ -71,6 +72,18 @@ public class PlayerStats : MonoBehaviour
         yield return new WaitForSeconds(invincibleDur);
         isInvincible = false;
     }
+    
+    private IEnumerator RegenRoutine()
+    {
+        while (true)
+        {
+            if (health < maxHealth)
+            {
+                health += healthRegenRate;
+            }
+            yield return new WaitForSeconds(5f);
+        }
+    }
 
     private IEnumerator GameOver()
     {
@@ -79,6 +92,6 @@ public class PlayerStats : MonoBehaviour
         Destroy(player.GetComponentInChildren<Weapon>());
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(2);
-        // Load game over scene/UI element
+        // TODO: Load game over scene/UI element
     }
 }
