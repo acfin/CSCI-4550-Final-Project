@@ -19,31 +19,25 @@ public class PlayerStats : MonoBehaviour
     public GameObject player;
 
     public UnityEvent OnLevelUp;
+    private Animator animator;
+    private DamageTextManager damageTextManager;
 
     public int GetExperienceToLevelUp(int currentLevel) => 100 + (int)((currentLevel - 1) * 150);
 
     public void Start()
     {
         health = maxHealth;
-    }
-
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            AddExperience(25);
-        }
+        damageTextManager = player.GetComponent<DamageTextManager>();
+        animator = player.GetComponent<Animator>();
     }
 
     public void AddExperience(int exp)
     {
         experience += exp;
-
         if (experience >= GetExperienceToLevelUp(level))
         {
             experience -= GetExperienceToLevelUp(level);
             level++;
-
             if (OnLevelUp != null)
             {
                 OnLevelUp.Invoke();
@@ -53,14 +47,19 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        animator.SetTrigger("Damage");
         if (!isInvincible)
         {
             health -= damage;
 
+            if (damageTextManager)
+            {
+                damageTextManager.DisplayDamage(damage);
+            }
             if (health <= 0)
             {
                 // Handle game over here.
-                Destroy(player);
+                StartCoroutine(GameOver());
             }
 
             StartCoroutine(InvincibilityRoutine());
@@ -71,5 +70,15 @@ public class PlayerStats : MonoBehaviour
         isInvincible = true;
         yield return new WaitForSeconds(invincibleDur);
         isInvincible = false;
+    }
+
+    private IEnumerator GameOver()
+    {
+        Destroy(player.GetComponent<MovementController>());
+        Destroy(player.GetComponent<DamageTextManager>());
+        Destroy(player.GetComponentInChildren<Weapon>());
+        animator.SetTrigger("Death");
+        yield return new WaitForSeconds(2);
+        // Load game over scene/UI element
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public int mainScene = 1;
+    public int weaponSelectScene = 1;
     public int settingsScene = 2;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(mainScene);
+        SceneManager.LoadScene(weaponSelectScene);
     }
     
     public void LoadSettings()

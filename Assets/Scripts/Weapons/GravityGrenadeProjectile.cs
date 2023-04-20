@@ -10,10 +10,20 @@ public class GravityGrenadeProjectile : MonoBehaviour
     private float explosionRadius = 10f;
     public float pullForce = 25f;
     private bool exploded = false;
+    private bool explodedEffect = false;
 
+    public GameObject particlePrefab;
+    public ParticleSystem particle;
+
+    private void Start()
+    {
+        // Instantiate the particle system prefab as a child of the projectile
+        GameObject particleObject = Instantiate(particlePrefab, transform.position, Quaternion.identity, transform);
+        particle = particleObject.GetComponent<ParticleSystem>();
+        particle.Stop();
+    }
     public void InitializeProjectile(int damage, float despawnTime, float explodeTime, float explosionRadius)
     {
-        this.exploded = false;
         this.damage = damage;
         this.despawnTime = despawnTime;
         this.spawnTime = Time.time;
@@ -27,6 +37,12 @@ public class GravityGrenadeProjectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        // Add a small delay between the explosion effect and damaging the enemies.
+        else if (Time.time > spawnTime + explodeTime - .15f && !explodedEffect)
+        {
+            explodedEffect = true;
+            ExplodeEffect();
+        }
         else if (Time.time > spawnTime + explodeTime && !exploded)
         {
             exploded = true;
@@ -38,11 +54,16 @@ public class GravityGrenadeProjectile : MonoBehaviour
         }
     }
 
-    private void Explode()
+    private void ExplodeEffect()
     {
         GetComponent<MeshRenderer>().enabled = false;
         GetComponentInChildren<Light>().enabled = false;
-        // TODO: Add explosion particle effect, sound effect
+        // TODO: Add sound effect
+        particle.Play();
+    }
+
+    private void Explode()
+    {
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider collider in colliders)
         {

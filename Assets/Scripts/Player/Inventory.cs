@@ -6,19 +6,27 @@ public class Inventory : MonoBehaviour
 {
     public int weaponCapacity = 3;
     public int passiveCapacity = 3;
-
-    public Weapon startingWeapon;
-    public GameObject player;
     
+    public GameObject player;
     private List<Weapon> weapons;
     private List<Passive> passives;
     public PlayerStats playerStats;
+
+    public Weapon defaultWeapon;
 
     void Start()
     {
         weapons = new List<Weapon>();
         passives = new List<Passive>();
-        AddWeapon(startingWeapon);
+        StartingWeapon selectedWeapon = FindObjectOfType<StartingWeapon>();
+        if (selectedWeapon != null)
+        {
+            AddWeapon(selectedWeapon.selectedWeapon);
+        }
+        else if(selectedWeapon == null)
+        {
+            AddWeapon(defaultWeapon);
+        }
     }
     
     // Add Weapon to inventory. 

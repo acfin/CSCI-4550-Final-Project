@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1700123094193825995}
   - component: {fileID: 5183859790127638395}
   - component: {fileID: 6653317940150264859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 2414779311492546602}
   - component: {fileID: 6735304125822519719}
   - component: {fileID: 6580642999568383808}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 4846232079206071595}
   - component: {fileID: 8151506547919519967}
   - component: {fileID: 2039841942564271573}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,9 +293,9 @@ GameObject:
   - component: {fileID: -1665896694469851252}
   - component: {fileID: 4851798966191220950}
   - component: {fileID: 702808283909874015}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sawblade
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,3 +359,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d64156b4c2659d0468c5ae8c4ff8ac2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackForce: 0.1
