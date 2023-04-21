@@ -108,15 +108,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 1
+    agentHeight: 1
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -1679,6 +1679,8 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 1462720695320296, guid: e9a03d46b76afe246a9ffd58d255bb65,
       type: 3}
     numberOfEnemies: 15
+  bosses:
+  - {fileID: 3625918246844665703, guid: 13436bdf7f01ac84abcaf429aad0ac45, type: 3}
   waveLength: 60
   waveNum: 0
 --- !u!4 &1296338620
@@ -2206,7 +2208,7 @@ MonoBehaviour:
   passiveCapacity: 3
   player: {fileID: 1470397853}
   playerStats: {fileID: 1994047200}
-  defaultWeapon: {fileID: 2948022306051118127, guid: 63bc0233babbfd14fb12b71022e475f3,
+  defaultWeapon: {fileID: 1635560974093710476, guid: 0f5dd183509a3ba4c9773e01743d3628,
     type: 3}
 --- !u!1 &1525888868
 GameObject:
@@ -3175,7 +3177,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
 --- !u!1001 &4520390766841513996
 PrefabInstance:
@@ -4317,7 +4319,7 @@ PrefabInstance:
     - target: {fileID: 4520390766208177377, guid: 7fadc2cf137fed24c90857d37e9553c6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4520390766208177377, guid: 7fadc2cf137fed24c90857d37e9553c6,
         type: 3}

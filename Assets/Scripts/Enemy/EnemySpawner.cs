@@ -36,6 +36,12 @@ public class EnemySpawner : MonoBehaviour
         enemyPrefab = ePrefab;
     }
     
+    public void SpawnBoss(GameObject ePrefab)
+    {
+        Vector3 spawnPosition = GetRandomSpawnPosition();
+        Instantiate(ePrefab, spawnPosition, Quaternion.identity);
+    }
+    
 
     private Vector3 GetRandomSpawnPosition()
     {
