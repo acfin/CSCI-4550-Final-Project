@@ -89,7 +89,12 @@ public class PlayerStats : MonoBehaviour
     {
         Destroy(player.GetComponent<MovementController>());
         Destroy(player.GetComponent<DamageTextManager>());
-        Destroy(player.GetComponentInChildren<Weapon>());
+        // Destroy all Weapon components in the player and its children
+        Weapon[] weapons = player.GetComponentsInChildren<Weapon>();
+        foreach (Weapon weapon in weapons)
+        {
+            Destroy(weapon);
+        }
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(2);
         // TODO: Load game over scene/UI element

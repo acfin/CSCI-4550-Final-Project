@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 {
     public EnemySpawner enemySpawner;
     public List<WaveData> waveData;
+    public List<GameObject> bosses;
     public int waveLength = 60;
     public int waveNum = 0;
     private bool victory = false;
@@ -29,9 +30,9 @@ public class GameManager : MonoBehaviour
             if (waveNum < waveData.Count)
             {
                 // Wave 5 Boss
-                if (waveNum == 4)
+                if (waveNum == 1)
                 {
-                    // Spawn Wave 5 Boss Enemy
+                    enemySpawner.SpawnBoss(bosses[0]);
                 }
                 Debug.Log("waveEnemy.Length");
                 Debug.Log("Spawning Wave: " + waveNum);

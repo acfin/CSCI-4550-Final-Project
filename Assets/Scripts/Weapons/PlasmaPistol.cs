@@ -25,7 +25,7 @@ public class PlasmaPistol : Weapon
     {
         foreach (Quaternion fireDirection in fireDirections)
         {
-            GameObject projectileInstance = Instantiate(projectilePrefab, transform.position + Vector3.up * .25f, fireDirection);
+            GameObject projectileInstance = Instantiate(projectilePrefab, transform.position + Vector3.up * .3f, fireDirection);
             Rigidbody projectileRigidbody = projectileInstance.GetComponent<Rigidbody>();
             projectileRigidbody.velocity = fireDirection * Vector3.forward * projectileSpeed;
 

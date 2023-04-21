@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
         navMeshAgent.speed = movementSpeed;
     }
 
-    public void Update()
+    public virtual void Update()
     {
         MoveTowardsPlayer();
         // Out of bounds check
