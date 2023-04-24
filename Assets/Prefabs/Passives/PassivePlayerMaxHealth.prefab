@@ -47,4 +47,5 @@ MonoBehaviour:
   level: 1
   maxLevel: 5
   passiveName: Max HP Boost
+  icon: {fileID: 21300012, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
   baseExtraMaxHealth: 20

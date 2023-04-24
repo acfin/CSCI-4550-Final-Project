@@ -1,11 +1,13 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] protected GameObject projectilePrefab;
     public string weaponName;
+    public Sprite icon;
     public int level = 1;
     public int maxLevel = 7;
     // Base Values

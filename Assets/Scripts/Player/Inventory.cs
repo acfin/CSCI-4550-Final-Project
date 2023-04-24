@@ -8,9 +8,10 @@ public class Inventory : MonoBehaviour
     public int passiveCapacity = 3;
     
     public GameObject player;
-    private List<Weapon> weapons;
+    public List<Weapon> weapons;
     private List<Passive> passives;
     public PlayerStats playerStats;
+    public InventoryUIManager hud;
 
     public Weapon defaultWeapon;
 
@@ -36,12 +37,14 @@ public class Inventory : MonoBehaviour
         if (existingWeapon != null)
         {
             existingWeapon.Upgrade();
+            hud.updateWeapons(weapons);
             return true;
         }
         if (weapons.Count < weaponCapacity)
         {
             Weapon newWeapon = Instantiate(weapon, player.transform.position, player.transform.rotation, player.transform);
             weapons.Add(newWeapon);
+            hud.updateWeapons(weapons);
             return true;
         }
         else
@@ -58,6 +61,7 @@ public class Inventory : MonoBehaviour
         {
             existingPassive.Upgrade();
             PassiveUpgrade(existingPassive);
+            hud.updatePassives(passives);
             return true;
         }
         if (passives.Count < passiveCapacity)
@@ -65,6 +69,7 @@ public class Inventory : MonoBehaviour
             Passive newPassive = Instantiate(passive, player.transform.position, player.transform.rotation, player.transform);
             passives.Add(newPassive);
             PassiveUpgrade(newPassive);
+            hud.updatePassives(passives);
             return true;
         }
         else

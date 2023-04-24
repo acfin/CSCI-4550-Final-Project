@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerStats : MonoBehaviour
     public float invincibleDur = 1f;
     public int healthRegenRate = 1;
 
+    public Slider healthbar, xpbar;
+
     public GameObject player;
 
     public UnityEvent OnLevelUp;
@@ -27,6 +30,7 @@ public class PlayerStats : MonoBehaviour
     public void Start()
     {
         health = maxHealth;
+        updateHealthbar();
         damageTextManager = player.GetComponent<DamageTextManager>();
         animator = player.GetComponent<Animator>();
         StartCoroutine(RegenRoutine());
@@ -35,15 +39,18 @@ public class PlayerStats : MonoBehaviour
     public void AddExperience(int exp)
     {
         experience += exp;
+        updateXPBar();
         if (experience >= GetExperienceToLevelUp(level))
         {
             experience -= GetExperienceToLevelUp(level);
             level++;
+            updateXPBar();
             if (OnLevelUp != null)
             {
                 OnLevelUp.Invoke();
             }
         }
+
     }
 
     public void TakeDamage(int damage)
@@ -52,6 +59,7 @@ public class PlayerStats : MonoBehaviour
         if (!isInvincible)
         {
             health -= damage;
+            updateHealthbar();
 
             if (damageTextManager)
             {
@@ -80,6 +88,7 @@ public class PlayerStats : MonoBehaviour
             if (health < maxHealth)
             {
                 health += healthRegenRate;
+                updateHealthbar();
             }
             yield return new WaitForSeconds(5f);
         }
@@ -98,5 +107,17 @@ public class PlayerStats : MonoBehaviour
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(2);
         // TODO: Load game over scene/UI element
+    }
+
+    private void updateHealthbar()
+    {
+        healthbar.maxValue = maxHealth;
+        healthbar.value = health;
+    }
+
+    private void updateXPBar()
+    {
+        xpbar.maxValue = GetExperienceToLevelUp(level);
+        xpbar.value = experience;
     }
 }

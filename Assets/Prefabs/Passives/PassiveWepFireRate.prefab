@@ -47,4 +47,5 @@ MonoBehaviour:
   level: 1
   maxLevel: 5
   passiveName: Fire Rate Boost
+  icon: {fileID: 21300022, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
   fireRateMultiplierPerLevel: 0.125
