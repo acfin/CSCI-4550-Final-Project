@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 Vector3 spawnPosition = GetRandomSpawnPosition();
                 Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-            }
+}
             yield return new WaitForSeconds(.02f);
         }
     }

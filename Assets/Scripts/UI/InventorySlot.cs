@@ -20,7 +20,6 @@ public class InventorySlot : MonoBehaviour
     {
         if (icon.sprite.name != null)
         {
-            Debug.Log(slotNum + icon.sprite.name);
             icon.enabled = true;
         }
     }

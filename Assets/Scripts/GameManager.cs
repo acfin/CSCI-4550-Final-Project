@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 [Serializable]
 public class WaveData
@@ -17,6 +19,9 @@ public class GameManager : MonoBehaviour
     public int waveLength = 60;
     public int waveNum = 0;
     private bool victory = false;
+
+    public TextMeshProUGUI waveText;
+    public WaveHUD waveHUD;
     
     // Start is called before the first frame update
     void Start()
@@ -37,8 +42,13 @@ public class GameManager : MonoBehaviour
                 Debug.Log("waveEnemy.Length");
                 Debug.Log("Spawning Wave: " + waveNum);
                 enemySpawner.SpawnEnemy(waveData[waveNum].enemyPrefab, waveData[waveNum].numberOfEnemies);
+                waveText.text = (waveNum+1).ToString();
+                waveHUD.secondsCount = waveLength;
+                waveHUD.waveLength = waveLength;
                 yield return new WaitForSeconds(waveLength);
-                waveNum++; 
+                waveNum++;
+
+
             }
             // Last wave
             else if (waveNum == waveData.Count)
