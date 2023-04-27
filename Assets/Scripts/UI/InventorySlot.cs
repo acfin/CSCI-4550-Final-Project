@@ -18,9 +18,13 @@ public class InventorySlot : MonoBehaviour
 
     private void Update()
     {
-        if (icon.sprite.name != null)
+        if (icon.sprite != null && icon.sprite.name != null)
         {
             icon.enabled = true;
+        }
+        else
+        {
+            icon.enabled = false;
         }
     }
 

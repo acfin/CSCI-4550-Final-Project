@@ -902,8 +902,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 15
-  Damage: 6
-  ExpGiven: 75
+  Damage: 4
+  ExpGiven: 60
   movementSpeed: 2.5
 --- !u!114 &4409053277856793721
 MonoBehaviour:

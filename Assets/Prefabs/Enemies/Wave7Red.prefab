@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: -8146111398880727104}
   - component: {fileID: 8252248247592613840}
   m_Layer: 9
-  m_Name: Wave1Red
+  m_Name: Wave7Red
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,10 +211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b3b6371bbec7e4bb5ad475f762d5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 5
-  Damage: 1
-  ExpGiven: 20
-  movementSpeed: 2
+  HP: 35
+  Damage: 8
+  ExpGiven: 140
+  movementSpeed: 3.4
 --- !u!114 &-8146111398880727104
 MonoBehaviour:
   m_ObjectHideFlags: 0
