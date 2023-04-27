@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
         PlayerStats playerStats = player.GetComponent<PlayerStats>();
         if (playerStats != null)
         {
-            
+            playerStats.enemiesSlain += 1;
             playerStats.AddExperience(ExpGiven);
         }
         Destroy(gameObject);

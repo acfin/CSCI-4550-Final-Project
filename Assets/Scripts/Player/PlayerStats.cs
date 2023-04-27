@@ -24,11 +24,14 @@ public class PlayerStats : MonoBehaviour
     public UnityEvent OnLevelUp;
     private Animator animator;
     private DamageTextManager damageTextManager;
+    public GameObject gameOverScreen;
+    public int enemiesSlain;
 
     public int GetExperienceToLevelUp(int currentLevel) => 100 + (int)((currentLevel - 1) * 150);
 
     public void Start()
     {
+        enemiesSlain = 0;
         health = maxHealth;
         updateHealthbar();
         damageTextManager = player.GetComponent<DamageTextManager>();
@@ -106,7 +109,10 @@ public class PlayerStats : MonoBehaviour
         }
         animator.SetTrigger("Death");
         yield return new WaitForSeconds(2);
+
         // TODO: Load game over scene/UI element
+        gameOverScreen.GetComponent<Canvas>().enabled = true;
+        gameOverScreen.GetComponent<GameOver>().updateStats();
     }
 
     private void updateHealthbar()
