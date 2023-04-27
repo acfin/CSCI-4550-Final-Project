@@ -15,8 +15,8 @@ public class GameOver : MonoBehaviour
     public void updateStats()
     {
         PlayerStats pStats = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<PlayerStats>();
-        slain.text = "EnemiesSlain: " + pStats.enemiesSlain;
-        time.text = "Enemies Slain: " + timer.minuteCount + ":" + (int)timer.secondsCount;
+        slain.text = "Enemies Slain: " + pStats.enemiesSlain;
+        time.text = "Time Elapsed: " + timer.minuteCount + ":" + (int)timer.secondsCount;
     }
     public void restartScene()
     {
