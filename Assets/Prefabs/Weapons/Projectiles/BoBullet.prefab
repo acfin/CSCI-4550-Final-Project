@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2172148932766071807}
   - component: {fileID: 7449273841852459185}
   m_Layer: 10
-  m_Name: EnemyBullets
+  m_Name: BoBullet
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6299dacb4116504982b71fcd1563db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 20
   lifetime: 10
 --- !u!1 &4810920923437001272
 GameObject:
