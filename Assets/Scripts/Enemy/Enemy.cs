@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     private GameObject player;
     private DamageTextManager damageTextManager;
     private NavMeshAgent navMeshAgent;
-    public void Start()
+    protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         damageTextManager = GetComponent<DamageTextManager>();

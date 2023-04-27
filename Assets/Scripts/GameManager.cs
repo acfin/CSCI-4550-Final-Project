@@ -29,16 +29,41 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartWave());
     }
 
+    void SpawnBoss()
+    {
+        // Wave 5 Boss
+        if (waveNum == 4)
+        {
+            enemySpawner.SpawnBoss(bosses[0]);
+        }
+        // Wave 10 Boss
+        else if (waveNum == 9)
+        {
+            enemySpawner.SpawnBoss(bosses[0]);
+        }
+        // Wave 15 Boss
+        else if (waveNum == 14)
+        {
+            enemySpawner.SpawnBoss(bosses[0]);
+        }
+        // Wave 20 Boss
+        else if (waveNum == 19)
+        {
+            enemySpawner.SpawnBoss(bosses[1]);
+        }
+        // Wave 25 Boss
+        else if (waveNum == 24)
+        {
+            enemySpawner.SpawnBoss(bosses[0]);
+        }
+    }
+
     IEnumerator StartWave()
     {
         while (!victory)
             if (waveNum < waveData.Count)
             {
-                // Wave 5 Boss
-                if (waveNum == 1)
-                {
-                    enemySpawner.SpawnBoss(bosses[0]);
-                }
+                SpawnBoss();
                 Debug.Log("waveEnemy.Length");
                 Debug.Log("Spawning Wave: " + waveNum);
                 enemySpawner.SpawnEnemy(waveData[waveNum].enemyPrefab, waveData[waveNum].numberOfEnemies);

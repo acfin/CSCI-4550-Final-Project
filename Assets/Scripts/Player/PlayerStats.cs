@@ -27,7 +27,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject gameOverScreen;
     public int enemiesSlain;
 
-    public int GetExperienceToLevelUp(int currentLevel) => 100 + (int)((currentLevel - 1) * 150);
+    public int GetExperienceToLevelUp(int currentLevel) => 100 + (int)((currentLevel - 1) * 300);
 
     public void Start()
     {
@@ -108,11 +108,13 @@ public class PlayerStats : MonoBehaviour
             Destroy(weapon);
         }
         animator.SetTrigger("Death");
-        yield return new WaitForSeconds(2);
+        // See death animation before gameover screen
+        yield return new WaitForSeconds(4);
 
         // TODO: Load game over scene/UI element
         gameOverScreen.GetComponent<Canvas>().enabled = true;
         gameOverScreen.GetComponent<GameOver>().updateStats();
+        Time.timeScale = 0f;
     }
 
     private void updateHealthbar()

@@ -115,9 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf6c72075bb79843b83e8ac2a69ec9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 25
-  Damage: 3
-  ExpGiven: 80
+  HP: 1000
+  Damage: 20
+  ExpGiven: 1000
   movementSpeed: 25
   rotationSpeed: 100
 --- !u!1001 &966914335916470962
