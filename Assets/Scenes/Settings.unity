@@ -665,6 +665,7 @@ GameObject:
   - component: {fileID: 388864486}
   - component: {fileID: 388864485}
   - component: {fileID: 388864484}
+  - component: {fileID: 388864487}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -738,6 +739,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &388864487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388864483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &530476484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,7 +2335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1685233374}
-  - component: {fileID: 1685233373}
+  - component: {fileID: 1685233375}
   m_Layer: 0
   m_Name: VolumeController
   m_TagString: Untagged
@@ -2309,18 +2343,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1685233373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685233372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fceb0f52d05ad14389c53eefdd7f331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1685233374
 Transform:
   m_ObjectHideFlags: 0
@@ -2336,6 +2358,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1685233375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685233372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381d70ad8d7aa4049a872eabcfd92d9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsScene: 4
+  mainMixer: {fileID: 24100000, guid: 0439c49f627297f42823f0cf9485db08, type: 2}
+  masterVolumeSlider: {fileID: 169126281}
+  musicVolumeSlider: {fileID: 1287720288}
+  soundVolumeSlider: {fileID: 1330462636}
 --- !u!1 &1729992366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,7 +2782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggle: {fileID: 1223316315}
-  menu: MainMenu
+  sceneNum: 0
 --- !u!1 &2119001192
 GameObject:
   m_ObjectHideFlags: 0
