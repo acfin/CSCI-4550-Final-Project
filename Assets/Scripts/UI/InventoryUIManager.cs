@@ -28,7 +28,7 @@ public class InventoryUIManager : MonoBehaviour
     {
         for (int i = 0; i < passives.Count; i++)
         {
-            slot = weaponSlots[i];
+            slot = passiveSlots[i];
             if (passives[i] != null)
             {
                 slot.icon.enabled = true;
