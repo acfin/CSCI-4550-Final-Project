@@ -918,7 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 250
-  Damage: 5
+  Damage: 7
   ExpGiven: 500
   movementSpeed: 5
   projectilePrefab: {fileID: 2494582264166593126, guid: 37b60a68c2c22b646bad5847f04c8085,

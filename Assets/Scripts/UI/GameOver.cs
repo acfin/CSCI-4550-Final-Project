@@ -16,7 +16,15 @@ public class GameOver : MonoBehaviour
     {
         PlayerStats pStats = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<PlayerStats>();
         slain.text = "Enemies Slain: " + pStats.enemiesSlain;
-        time.text = "Time Elapsed: " + timer.minuteCount + ":" + (int)timer.secondsCount;
+        if (timer.secondsCount < 10)
+        {
+            time.text = "Time Elapsed: " + timer.minuteCount + ":0" + (int)timer.secondsCount;   
+        }
+        else
+        {
+            time.text = "Time Elapsed: " + timer.minuteCount + ":" + (int)timer.secondsCount;
+        }
+        
     }
     public void restartScene()
     {
@@ -25,6 +33,7 @@ public class GameOver : MonoBehaviour
 
     public void goToMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenuScene);
     }
 

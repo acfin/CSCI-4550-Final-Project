@@ -22,10 +22,12 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI waveText;
     public WaveHUD waveHUD;
+    public GameObject victoryScreen;
     
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         StartCoroutine(StartWave());
     }
 
@@ -39,22 +41,22 @@ public class GameManager : MonoBehaviour
         // Wave 10 Boss
         else if (waveNum == 9)
         {
-            enemySpawner.SpawnBoss(bosses[0]);
+            enemySpawner.SpawnBoss(bosses[1]);
         }
         // Wave 15 Boss
         else if (waveNum == 14)
         {
-            enemySpawner.SpawnBoss(bosses[0]);
+            enemySpawner.SpawnBoss(bosses[2]);
         }
         // Wave 20 Boss
         else if (waveNum == 19)
         {
-            enemySpawner.SpawnBoss(bosses[1]);
+            enemySpawner.SpawnBoss(bosses[3]);
         }
         // Wave 25 Boss
         else if (waveNum == 24)
         {
-            enemySpawner.SpawnBoss(bosses[0]);
+            enemySpawner.SpawnBoss(bosses[4]);
         }
     }
 
@@ -80,7 +82,9 @@ public class GameManager : MonoBehaviour
             {
                 yield return new WaitForSeconds(waveLength);
                 victory = true;
-                // TODO: Victory screen
+                Time.timeScale = 0f;
+                victoryScreen.GetComponent<Canvas>().enabled = true;
+                victoryScreen.GetComponent<VictoryScreen>().updateStats();
             }
     }
 }
