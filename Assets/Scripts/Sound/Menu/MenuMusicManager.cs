@@ -1,17 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuMusicManager : MonoBehaviour
 {
     AudioSource menuMusic;
-    AudioSource gameplayMusic;
-    [SerializeField] Transform cameraPos;
-    void Start()
-    {
-        menuMusic = gameObject.GetComponent<AudioSource>();
-        gameObject.transform.position = cameraPos.position;
-    }
 
     void Awake()
     {
@@ -23,14 +17,16 @@ public class MenuMusicManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+        menuMusic = gameObject.GetComponent<AudioSource>();
+        gameObject.transform.position = Camera.main.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.transform.position != cameraPos.position)
+        if(SceneManager.GetActiveScene().buildIndex == 3)
         {
-            gameObject.transform.position = cameraPos.position;
+            Destroy(gameObject);
         }
     }
 }

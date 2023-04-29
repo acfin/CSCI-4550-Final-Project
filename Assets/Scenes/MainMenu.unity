@@ -257,6 +257,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 969036096}
+        m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+        m_MethodName: playLevelOne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &169073883
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9747d7d193c924b449b0dbed2e8e9be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPos: {fileID: 408180086}
 --- !u!4 &312889937
 Transform:
   m_ObjectHideFlags: 0
@@ -1021,6 +1032,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 969036096}
+        m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+        m_MethodName: playLevelOne
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &730087836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1184,6 +1207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 969036094}
   - component: {fileID: 969036095}
+  - component: {fileID: 969036096}
   m_Layer: 0
   m_Name: UISoundPlayer
   m_TagString: SoundFX
@@ -1219,7 +1243,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.796
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1303,6 +1327,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &969036096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969036093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a148cbef5d613564c9b67cdbb04d0ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelOne: {fileID: 8300000, guid: 7a9068ba1c6a5cf46aab0a1e9d2111f0, type: 3}
+  levelTwo: {fileID: 8300000, guid: e73efeb2644f35b409c3a2e085e20e14, type: 3}
+  levelThree: {fileID: 8300000, guid: d246b2e9e75d4c74bb1ee587bd80ddb9, type: 3}
 --- !u!1 &1055128234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,6 +1846,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1935211607}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: LoadSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 969036096}
+        m_TargetAssemblyTypeName: UISound, Assembly-CSharp
+        m_MethodName: playLevelOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
