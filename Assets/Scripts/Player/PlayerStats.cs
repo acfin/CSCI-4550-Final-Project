@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
 {
     public int level = 1;
     public int experience = 0;
-
+    public int experienceToLevelMod = 200;
     public float speed = 10f;
     public int maxHealth = 100;
     public int health;
@@ -27,7 +27,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject gameOverScreen;
     public int enemiesSlain;
 
-    public int GetExperienceToLevelUp(int currentLevel) => 100 + (int)((currentLevel - 1) * 300);
+    public int GetExperienceToLevelUp(int currentLevel) => (int)(Math.Pow(currentLevel, 1.5) * experienceToLevelMod);
 
     public void Start()
     {

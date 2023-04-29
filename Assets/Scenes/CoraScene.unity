@@ -107,7 +107,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 1
+    agentRadius: 0.1
     agentHeight: 1
     agentSlope: 45
     agentClimb: 0.4
@@ -115,7 +115,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.33333334
+    cellSize: 0.033333335
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -810,7 +810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246606864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.45, y: -8.48, z: -14.96}
+  m_LocalPosition: {x: 18.9, y: -8.48, z: -14.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -828,7 +828,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.5, y: 1, z: 9}
+  m_Size: {x: 9, y: 1, z: 11}
   m_Center: {x: 1, y: 0, z: 1}
 --- !u!1 &261484728 stripped
 GameObject:
@@ -1230,7 +1230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378901112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -8.35, z: 2.86}
+  m_LocalPosition: {x: -0.15, y: -8.35, z: 2.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1275,7 +1275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430205313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.22, y: -8.48, z: -5.74}
+  m_LocalPosition: {x: 20.22, y: -8.48, z: -4.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1293,7 +1293,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 1, z: 12}
+  m_Size: {x: 3, y: 1, z: 9}
   m_Center: {x: 1, y: 0, z: 1}
 --- !u!1001 &473659670
 PrefabInstance:
@@ -1912,7 +1912,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 1, z: 3}
+  m_Size: {x: 27, y: 1, z: 3}
   m_Center: {x: 1, y: 0, z: 1}
 --- !u!1 &755881920
 GameObject:
@@ -2753,88 +2753,88 @@ MonoBehaviour:
   waveData:
   - enemyPrefab: {fileID: 1128758269040250, guid: f88c6ad57910d8648807bcf0c131f49d,
       type: 3}
-    numberOfEnemies: 5
+    numberOfEnemies: 4
   - enemyPrefab: {fileID: 9196879129935289235, guid: 2265be590d199f044a43d37ac0a89df6,
       type: 3}
-    numberOfEnemies: 10
+    numberOfEnemies: 6
   - enemyPrefab: {fileID: 1462720695320296, guid: e9a03d46b76afe246a9ffd58d255bb65,
       type: 3}
-    numberOfEnemies: 15
+    numberOfEnemies: 8
   - enemyPrefab: {fileID: 1128758269040250, guid: 1ac69b947da5b8d48bd06f41f98df475,
       type: 3}
-    numberOfEnemies: 20
+    numberOfEnemies: 10
   - enemyPrefab: {fileID: 9196879129935289235, guid: d9c556dba490fca4983add6290a06927,
       type: 3}
-    numberOfEnemies: 25
+    numberOfEnemies: 13
   - enemyPrefab: {fileID: 1462720695320296, guid: abc98e2180c949d41986d9b23b62db40,
       type: 3}
-    numberOfEnemies: 30
+    numberOfEnemies: 15
   - enemyPrefab: {fileID: 1128758269040250, guid: 39e5a8c463f042743992da30917201f5,
       type: 3}
-    numberOfEnemies: 35
+    numberOfEnemies: 18
   - enemyPrefab: {fileID: 9196879129935289235, guid: f37cf458e065cb84db40e6399788ac89,
       type: 3}
-    numberOfEnemies: 40
+    numberOfEnemies: 20
   - enemyPrefab: {fileID: 1462720695320296, guid: b579a9d49cc239a4294ef4d668967fbb,
       type: 3}
-    numberOfEnemies: 45
+    numberOfEnemies: 23
   - enemyPrefab: {fileID: 1128758269040250, guid: 6862652aa658eec46b409250b0c4e7b1,
       type: 3}
-    numberOfEnemies: 50
+    numberOfEnemies: 25
   - enemyPrefab: {fileID: 9196879129935289235, guid: 315924071e7623e4f819b756c5be9059,
       type: 3}
-    numberOfEnemies: 55
+    numberOfEnemies: 27
   - enemyPrefab: {fileID: 1462720695320296, guid: 354c72e93d546764b97289de82e6154b,
       type: 3}
-    numberOfEnemies: 60
+    numberOfEnemies: 30
   - enemyPrefab: {fileID: 1128758269040250, guid: f0851ca5ba7a2934ca03bcd58874e5b5,
       type: 3}
-    numberOfEnemies: 65
+    numberOfEnemies: 33
   - enemyPrefab: {fileID: 9196879129935289235, guid: 0b53a9c7c4332984fbb8b785ad1a8b50,
       type: 3}
-    numberOfEnemies: 70
+    numberOfEnemies: 35
   - enemyPrefab: {fileID: 1462720695320296, guid: 32e04029497155441bf07912f730ff8d,
       type: 3}
-    numberOfEnemies: 75
+    numberOfEnemies: 38
   - enemyPrefab: {fileID: 1128758269040250, guid: 08c1a168796583b419b27542525d1860,
       type: 3}
-    numberOfEnemies: 80
+    numberOfEnemies: 40
   - enemyPrefab: {fileID: 9196879129935289235, guid: f2064da2a86374d409c1b15769234f86,
       type: 3}
-    numberOfEnemies: 85
+    numberOfEnemies: 42
   - enemyPrefab: {fileID: 1462720695320296, guid: 1026099a40338d549a4bf0090d9094da,
       type: 3}
-    numberOfEnemies: 90
+    numberOfEnemies: 45
   - enemyPrefab: {fileID: 1128758269040250, guid: 3b1120acf91ab014db265d687b18b76d,
       type: 3}
-    numberOfEnemies: 95
+    numberOfEnemies: 50
   - enemyPrefab: {fileID: 9196879129935289235, guid: a2c0234b342c9ed4b9e2b97af20deba3,
       type: 3}
-    numberOfEnemies: 100
+    numberOfEnemies: 55
   - enemyPrefab: {fileID: 1462720695320296, guid: 9a01c3ea0738d9649b59277ba281d40e,
       type: 3}
-    numberOfEnemies: 100
+    numberOfEnemies: 60
   - enemyPrefab: {fileID: 1128758269040250, guid: c978ac353badc8a43babb782125c28c7,
       type: 3}
-    numberOfEnemies: 100
+    numberOfEnemies: 65
   - enemyPrefab: {fileID: 9196879129935289235, guid: e26e7d8e6a421bc4587bebd228de10f9,
       type: 3}
-    numberOfEnemies: 100
+    numberOfEnemies: 70
   - enemyPrefab: {fileID: 1462720695320296, guid: a999d6372b9442f44b4e99e97166477c,
       type: 3}
-    numberOfEnemies: 100
+    numberOfEnemies: 75
   - enemyPrefab: {fileID: 1128758269040250, guid: af0c5ca2ae8dcea4ab5934d509a66f96,
       type: 3}
-    numberOfEnemies: 100
+    numberOfEnemies: 80
   - enemyPrefab: {fileID: 9196879129935289235, guid: 298a9bab04b02524184382cfec35c981,
       type: 3}
-    numberOfEnemies: 100
+    numberOfEnemies: 85
   - enemyPrefab: {fileID: 1462720695320296, guid: c6e582961c87c9b449a5abfde7d39b81,
       type: 3}
-    numberOfEnemies: 100
+    numberOfEnemies: 90
   - enemyPrefab: {fileID: 1128758269040250, guid: fe6feea8fa800cb4388b8e8c35d50cb4,
       type: 3}
-    numberOfEnemies: 100
+    numberOfEnemies: 95
   - enemyPrefab: {fileID: 9196879129935289235, guid: 780e79694ffeb134c8dcfef27c105ff6,
       type: 3}
     numberOfEnemies: 100
@@ -4430,7 +4430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792068033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.76, y: -6.84, z: 1.81}
+  m_LocalPosition: {x: 39.76, y: -6.17, z: 1.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4946,12 +4946,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   experience: 0
+  experienceToLevelMod: 200
   speed: 5
-  maxHealth: 10
+  maxHealth: 25
   health: 0
   isInvincible: 0
-  invincibleDur: 1
-  healthRegenRate: 1
+  invincibleDur: 1.5
+  healthRegenRate: 2
   healthbar: {fileID: 1362950182}
   xpbar: {fileID: 375583998}
   player: {fileID: 1470397853}

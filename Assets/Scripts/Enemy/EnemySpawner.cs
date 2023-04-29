@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
 
         Vector3 spawnPosition;
         int attempts = 0;
-        const int maxAttempts = 25;
+        const int maxAttempts = 100;
 
         // If the randomly generated location is too close to the player, it will recalculate a spawn area.
         // If max attempts is reached, it will use the last attempted location. (Prevents infinite while loop)
