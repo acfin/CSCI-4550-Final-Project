@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/WeaponSelect.unity
     guid: 60d036e8ce547ea41b2c1ded1c8025e6
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Settings.unity
+    guid: 70c3172d977be0b48a86731000e69a5d
   - enabled: 1
     path: Assets/Scenes/CoraScene.unity
     guid: 357b35cc94d62cc458ee1cc8c0e5f153
