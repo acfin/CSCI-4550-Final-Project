@@ -1598,7 +1598,6 @@ GameObject:
   - component: {fileID: 1935211605}
   - component: {fileID: 1935211604}
   - component: {fileID: 1935211603}
-  - component: {fileID: 1935211607}
   - component: {fileID: 1935211608}
   m_Layer: 5
   m_Name: Weapon Selection Menu
@@ -1695,20 +1694,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1935211607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935211602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c59d696635118d447ad2fcf3e8bf07f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSelectScene: 1
-  settingsScene: 2
 --- !u!114 &1935211608
 MonoBehaviour:
   m_ObjectHideFlags: 0
