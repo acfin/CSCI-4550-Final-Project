@@ -11,6 +11,8 @@ TagManager:
   - Wall
   - Floor
   - EnemyProjectile
+  - Music
+  - SoundFX
   layers:
   - Default
   - TransparentFX
