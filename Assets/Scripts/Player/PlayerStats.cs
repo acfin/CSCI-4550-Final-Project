@@ -29,6 +29,8 @@ public class PlayerStats : MonoBehaviour
 
     public int GetExperienceToLevelUp(int currentLevel) => (int)(Math.Pow(currentLevel, 1.5) * experienceToLevelMod);
 
+    public bool hasShield = false;
+    public int shieldHealth = 5;
     public void Start()
     {
         enemiesSlain = 0;
@@ -58,25 +60,38 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        animator.SetTrigger("Damage");
-        if (!isInvincible)
+        if (hasShield)
         {
-            health -= damage;
-            updateHealthbar();
-
-            if (damageTextManager)
+            shieldHealth--;
+            damageTextManager.DisplayHealing(0);
+            if(shieldHealth == 0)
             {
-                damageTextManager.DisplayDamage(damage);
+                hasShield = false;
             }
-            if (health <= 0)
+        }
+        else
+        {
+            animator.SetTrigger("Damage");
+            if (!isInvincible)
             {
-                // Handle game over here.
-                StartCoroutine(GameOver());
-            }
+                health -= damage;
+                updateHealthbar();
 
-            StartCoroutine(InvincibilityRoutine());
+                if (damageTextManager)
+                {
+                    damageTextManager.DisplayDamage(damage);
+                }
+                if (health <= 0)
+                {
+                    // Handle game over here.
+                    StartCoroutine(GameOver());
+                }
+
+                StartCoroutine(InvincibilityRoutine());
+            }
         }
     }
+
     private IEnumerator InvincibilityRoutine()
     {
         isInvincible = true;
@@ -117,7 +132,7 @@ public class PlayerStats : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    private void updateHealthbar()
+    public void updateHealthbar()
     {
         healthbar.maxValue = maxHealth;
         healthbar.value = health;

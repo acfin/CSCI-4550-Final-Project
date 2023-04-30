@@ -16,6 +16,14 @@ public class Enemy : MonoBehaviour
     private GameObject player;
     private DamageTextManager damageTextManager;
     private NavMeshAgent navMeshAgent;
+
+    public GameObject powerUp;
+    public GameObject healingDrop;
+    public GameObject shieldDrop;
+    private float speedRNG = 0.05f;
+    private float healingRNG = 0.1f;
+    private float shieldRNG = 0.1f;
+
     protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -61,6 +69,19 @@ public class Enemy : MonoBehaviour
             playerStats.enemiesSlain += 1;
             playerStats.AddExperience(ExpGiven);
         }
+        if (UnityEngine.Random.value <= speedRNG)
+        {
+            DropPowerUp();
+        }
+        if (UnityEngine.Random.value <= healingRNG)
+        {
+            DropHealing();
+        }
+        if (UnityEngine.Random.value <= shieldRNG)
+        {
+            DropShield();
+        }
+
         Destroy(gameObject);
     }
     
@@ -85,7 +106,7 @@ public class Enemy : MonoBehaviour
             navMeshAgent.SetDestination(player.transform.position);
         }
     }
-    
+
     // Old movement function, NavMesh seems to accomplish our movement better.
     /*private void MoveTowardsPlayer()
     {
@@ -102,5 +123,20 @@ public class Enemy : MonoBehaviour
         }
     }*/
 
-    
+    void DropPowerUp()
+    {
+        Vector3 spawnPosition = transform.position + new Vector3(0f, .8f, 0f);
+        Instantiate(powerUp, spawnPosition, Quaternion.identity);
+    }
+    void DropHealing()
+    {
+        Vector3 spawnPosition = transform.position + new Vector3(0f, .8f, 0f);
+        Instantiate(healingDrop, spawnPosition, Quaternion.identity);
+    }
+    void DropShield()
+    {
+        Vector3 spawnPosition = transform.position + new Vector3(0f, .8f, 0f);
+        Instantiate(shieldDrop, spawnPosition, Quaternion.identity);
+    }
+
 }

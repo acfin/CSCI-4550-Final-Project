@@ -41,5 +41,15 @@ public class CameraController : MonoBehaviour
             float newZoom = Mathf.Clamp(offset.magnitude + (zoomSpeed * Time.deltaTime * 5f), minZoom, maxZoom);
             offset = offset.normalized * newZoom;
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            transform.RotateAround(player.transform.position, Vector3.up, 90);
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            transform.RotateAround(player.transform.position, Vector3.up, -90);
+        }
+
     }
 }

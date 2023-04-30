@@ -13,6 +13,8 @@ TagManager:
   - EnemyProjectile
   - Music
   - SoundFX
+  - PowerUp
+  - Heal
   layers:
   - Default
   - TransparentFX

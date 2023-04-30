@@ -907,6 +907,11 @@ MonoBehaviour:
   movementSpeed: 3.2
   takeDamage: {fileID: 8300000, guid: e3216b06416809d438deed8b8077cbc2, type: 3}
   soundfx: {fileID: 8959648434073613899, guid: 0439c49f627297f42823f0cf9485db08, type: 2}
+  powerUp: {fileID: 4562234904423264140, guid: bc19e7f8cd673274bad223dbee320c0f, type: 3}
+  healingDrop: {fileID: 1539895554982869284, guid: dd88cc057dbcce8418151ff8b37e6a5e,
+    type: 3}
+  shieldDrop: {fileID: 3103958591494484092, guid: efc4c29b4fac6024fbcc74e024c01066,
+    type: 3}
 --- !u!114 &4409053277856793721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,6 +927,7 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 7968853116395584448, guid: 869f903f684f86a4e885db7cc00dfd00,
     type: 3}
   textColor: {r: 1, g: 1, b: 1, a: 1}
+  healColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1486048802852170
 GameObject:
   m_ObjectHideFlags: 0

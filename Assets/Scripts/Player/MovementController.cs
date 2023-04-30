@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class MovementController : MonoBehaviour
 {
@@ -7,6 +9,14 @@ public class MovementController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 moveDirection;
     private Animator animator;
+
+    private bool hasPowerUp = false;
+    private float powerUpDuration = 3f;
+    private float powerUpStrength = 5;
+
+    private int healAmount = 10;
+    public MeshRenderer characterRenderer;
+    private DamageTextManager healText;
 
     void Start()
     {
@@ -52,4 +62,46 @@ public class MovementController : MonoBehaviour
         rb.MovePosition(transform.position + moveDirection * speed * Time.deltaTime);
         
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PowerUp"))
+        {
+            Destroy(other.gameObject);
+            if (!hasPowerUp)
+            {
+                hasPowerUp = true;
+                playerStats.speed += powerUpStrength;
+                StartCoroutine(SpeedCooldown());
+            }
+        }
+
+        if(other.CompareTag("Heal"))
+        {
+            Destroy(other.gameObject);
+            playerStats.health += healAmount;
+            if (playerStats.health > playerStats.maxHealth)
+            {
+                playerStats.health = playerStats.maxHealth;
+            }
+
+            healText.DisplayHealing(10);
+            playerStats.updateHealthbar();
+        }
+
+        if(other.CompareTag("Shield"))
+        {
+            Destroy(other.gameObject);
+            playerStats.hasShield = true;
+        }
+    }
+
+
+    IEnumerator SpeedCooldown()
+    {
+        yield return new WaitForSeconds(powerUpDuration);
+        playerStats.speed -= powerUpStrength;
+        hasPowerUp = false;
+    }
+
 }
