@@ -27,8 +27,6 @@ public class PlayerStats : MonoBehaviour
     public GameObject gameOverScreen;
     public int enemiesSlain;
 
-    PlayerSoundFXManager soundfx;
-
     public int GetExperienceToLevelUp(int currentLevel) => (int)(Math.Pow(currentLevel, 1.5) * experienceToLevelMod);
 
     public void Start()
@@ -39,7 +37,6 @@ public class PlayerStats : MonoBehaviour
         damageTextManager = player.GetComponent<DamageTextManager>();
         animator = player.GetComponent<Animator>();
         StartCoroutine(RegenRoutine());
-        soundfx = gameObject.GetComponentInParent<PlayerSoundFXManager>();
     }
 
     public void AddExperience(int exp)
@@ -61,7 +58,6 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        soundfx.TakeDamage();
         animator.SetTrigger("Damage");
         if (!isInvincible)
         {

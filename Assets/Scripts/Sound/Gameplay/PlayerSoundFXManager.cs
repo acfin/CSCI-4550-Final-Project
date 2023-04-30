@@ -7,7 +7,7 @@ public class PlayerSoundFXManager : MonoBehaviour
     [SerializeField] AudioClip plasmaPistol;
     [SerializeField] AudioClip saw;
     [SerializeField] AudioClip weaponPickup;
-    [SerializeField] AudioClip takeDamage;
+    [SerializeField] AudioClip takingDamage;
 
     AudioSource playerAudio;
 
@@ -16,7 +16,7 @@ public class PlayerSoundFXManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerAudio = GameObject.Find("Player").GetComponent<AudioSource>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,9 +24,21 @@ public class PlayerSoundFXManager : MonoBehaviour
     {
     }
 
-    public void TakeDamage()
+    public void StartTakingDamage()
     {
-        playerAudio.PlayOneShot(takeDamage);
+        if(!isTakingDamage)
+        {
+            playerAudio.clip = takingDamage;
+            playerAudio.Play();
+            playerAudio.loop = true;
+            isTakingDamage = true;
+        }
+    }
+
+    public void StopTakingDamage()
+    {
+        playerAudio.Stop();
+        isTakingDamage = false;
     }
 
     public void PickupWeapon()
