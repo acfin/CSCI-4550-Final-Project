@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class UISound : MonoBehaviour
 {
+    public static UISound Instance { get; private set; }
+
     AudioSource menuUI;
     [SerializeField] AudioClip levelOne;
     [SerializeField] AudioClip levelTwo;
-    [SerializeField] AudioClip levelThree;   
+    [SerializeField] AudioClip levelThree;
 
     void Awake()
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
-
-        if (objs.Length > 1)
+        if (Instance == null)
         {
-            Destroy(this.gameObject);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            menuUI = gameObject.GetComponent<AudioSource>();
+            gameObject.transform.position = Camera.main.transform.position;
         }
-
-        DontDestroyOnLoad(this.gameObject);
-        menuUI = gameObject.GetComponent<AudioSource>();
-        gameObject.transform.position = Camera.main.transform.position;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void playLevelOne()
