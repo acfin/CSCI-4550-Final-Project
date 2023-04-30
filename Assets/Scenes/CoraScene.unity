@@ -2292,7 +2292,7 @@ MonoBehaviour:
   plasmaPistol: {fileID: 8300000, guid: 1be28e5c4c4f3e545966f2e5703e6359, type: 3}
   saw: {fileID: 8300000, guid: 5ea17c97d4cb0844584bec0eb77ab168, type: 3}
   weaponPickup: {fileID: 8300000, guid: a2436b82cd0c17a4dbdb75d95dfc66dc, type: 3}
-  takingDamage: {fileID: 8300000, guid: 88034fd30769d564d9fc8ab63121037c, type: 3}
+  takeDamage: {fileID: 8300000, guid: 4945c40840984774ba3c59fd744f780f, type: 3}
 --- !u!82 &1470397864
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3180,6 +3180,7 @@ GameObject:
   - component: {fileID: 1994047199}
   - component: {fileID: 1994047201}
   - component: {fileID: 1994047200}
+  - component: {fileID: 1994047202}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: PlayerStats
@@ -3259,6 +3260,22 @@ MonoBehaviour:
   - {fileID: 5663164270708629439, guid: 2b8d7291ca97a1b4bb55278cba69a869, type: 3}
   - {fileID: 860064724622240382, guid: c9e4ef1dcd151174db5c60ba640d6d4f, type: 3}
   inventory: {fileID: 1470397861}
+--- !u!114 &1994047202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994047198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38cb6c3f81955e458a17a6528d41145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plasmaPistol: {fileID: 8300000, guid: 1be28e5c4c4f3e545966f2e5703e6359, type: 3}
+  saw: {fileID: 8300000, guid: 5ea17c97d4cb0844584bec0eb77ab168, type: 3}
+  weaponPickup: {fileID: 8300000, guid: a2436b82cd0c17a4dbdb75d95dfc66dc, type: 3}
+  takeDamage: {fileID: 8300000, guid: 4945c40840984774ba3c59fd744f780f, type: 3}
 --- !u!114 &2067698620 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5444914225181673870, guid: 078f99a7fe6dd354aa4e244b3ad32d8e,
