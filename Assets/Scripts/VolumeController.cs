@@ -76,21 +76,21 @@ public class VolumeController : MonoBehaviour
 
     public void SetMasterVolume(float volume)
     {
-        float dB = volume > 0 ? Mathf.Log10(volume) * 20 : -80;
+        float dB = Mathf.Lerp(-80f, 20f, volume);
         mainMixer.SetFloat("Master", dB);
         PlayerPrefs.SetFloat("Master", volume);
     }
 
     public void SetMusicVolume(float volume)
     {
-        float dB = volume > 0 ? Mathf.Log10(volume) * 20 : -80;
+        float dB = Mathf.Lerp(-80f, 20f, volume);
         mainMixer.SetFloat("Music", dB);
         PlayerPrefs.SetFloat("Music", volume);
     }
 
     public void SetSoundVolume(float volume)
     {
-        float dB = volume > 0 ? Mathf.Log10(volume) * 20 : -80;
+        float dB = Mathf.Lerp(-80f, 20f, volume);
         mainMixer.SetFloat("Sound", dB);
         PlayerPrefs.SetFloat("Sound", volume);
     }

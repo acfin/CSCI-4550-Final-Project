@@ -5980,11 +5980,11 @@ MonoBehaviour:
   experience: 0
   experienceToLevelMod: 200
   speed: 5
-  maxHealth: 25
+  maxHealth: 30
   health: 0
   isInvincible: 0
   invincibleDur: 1.5
-  healthRegenRate: 2
+  healthRegenRate: 3
   healthbar: {fileID: 5444914225552289571}
   xpbar: {fileID: 5444914225496211452}
   player: {fileID: 1470397853}
