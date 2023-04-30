@@ -2292,7 +2292,7 @@ MonoBehaviour:
   plasmaPistol: {fileID: 8300000, guid: 1be28e5c4c4f3e545966f2e5703e6359, type: 3}
   saw: {fileID: 8300000, guid: 5ea17c97d4cb0844584bec0eb77ab168, type: 3}
   weaponPickup: {fileID: 8300000, guid: a2436b82cd0c17a4dbdb75d95dfc66dc, type: 3}
-  takingDamage: {fileID: 8300000, guid: 88034fd30769d564d9fc8ab63121037c, type: 3}
+  takeDamage: {fileID: 8300000, guid: 4945c40840984774ba3c59fd744f780f, type: 3}
 --- !u!82 &1470397864
 AudioSource:
   m_ObjectHideFlags: 0
