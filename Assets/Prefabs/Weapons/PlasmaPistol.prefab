@@ -52,5 +52,5 @@ MonoBehaviour:
   maxLevel: 7
   baseDamage: 1
   baseFireRate: 3
-  baseProjectileSpeed: 10
+  baseProjectileSpeed: 11
   baseDespawnTime: 12
