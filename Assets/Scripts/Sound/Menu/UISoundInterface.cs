@@ -9,7 +9,16 @@ public class UISoundInterface : MonoBehaviour
 
     void Start()
     {
-        uiSound = GameObject.Find("UISoundPlayer").GetComponent<UISound>();
+        // Null reference check if loaded scene is any scene other than MainMenu
+        GameObject uiSoundPlayer = GameObject.Find("UISoundPlayer");
+        if (uiSoundPlayer != null)
+        {
+            uiSound = uiSoundPlayer.GetComponent<UISound>();
+        }
+        else
+        {
+            Debug.LogWarning("UISoundPlayer not found.");
+        }
     }
 
     public void playLevelOne()
