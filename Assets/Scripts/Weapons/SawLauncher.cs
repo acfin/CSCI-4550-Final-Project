@@ -17,6 +17,7 @@ public class SawLauncher : Weapon
     
     protected override void Fire()
     {
+        gameObject.GetComponentInParent<PlayerSoundFXManager>().LaunchSaw();
         for (int i = 0; i < numberOfProjectiles; i++)
         {
             Vector3 fireDirection = Quaternion.Euler(0, Random.Range(-coneAngle / 2, coneAngle / 2), 0) * transform.forward;

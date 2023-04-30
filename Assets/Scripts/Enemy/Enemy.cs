@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class Enemy : MonoBehaviour
     public int Damage = 1;
     public int ExpGiven = 50;
     public float movementSpeed = 3f;
-    
+    [SerializeField] protected  AudioClip takeDamage;
+    [SerializeField] protected AudioMixerGroup soundfx;
+
     private GameObject player;
     private DamageTextManager damageTextManager;
     private NavMeshAgent navMeshAgent;
@@ -34,6 +37,11 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         HP -= damage;
+        //SoundFX
+        bool value = soundfx.audioMixer.GetFloat("Sound", out float volume);
+        volume = Mathf.Pow(10f, volume / 20);
+        AudioSource.PlayClipAtPoint(takeDamage, gameObject.transform.position, volume);
+        //
         if (damageTextManager)
         {
             damageTextManager.DisplayDamage(damage);

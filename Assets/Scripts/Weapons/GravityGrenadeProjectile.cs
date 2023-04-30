@@ -14,9 +14,11 @@ public class GravityGrenadeProjectile : MonoBehaviour
 
     public GameObject particlePrefab;
     public ParticleSystem particle;
+    private GravityGrenadeSoundManager grenadeSound;
 
     private void Start()
     {
+        grenadeSound = GetComponent<GravityGrenadeSoundManager>();
         // Instantiate the particle system prefab as a child of the projectile
         GameObject particleObject = Instantiate(particlePrefab, transform.position, Quaternion.identity, transform);
         particle = particleObject.GetComponent<ParticleSystem>();
@@ -64,6 +66,7 @@ public class GravityGrenadeProjectile : MonoBehaviour
 
     private void Explode()
     {
+        grenadeSound.explodeGrenade();
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider collider in colliders)
         {

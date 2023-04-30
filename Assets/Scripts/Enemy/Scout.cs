@@ -8,6 +8,7 @@ public class Scout : Enemy
     public float timeBetweenShots = 0.5f;
     public float bulletSpeed = 10f;
     public float offsetAngle = 10f;
+    [SerializeField] AudioClip enemyFire;
     
     private bool playerInRange = false;
     
@@ -25,7 +26,11 @@ public class Scout : Enemy
     private IEnumerator ShootProjectiles()
     {
         playerInRange = false;
-
+        //SoundFX
+        bool value = soundfx.audioMixer.GetFloat("Sound", out float volume);
+        volume = Mathf.Pow(10f, volume / 20);
+        AudioSource.PlayClipAtPoint(takeDamage, gameObject.transform.position, volume);
+        //
         float angleBetweenProjectiles = 360f / projectilesToShoot;
         for (int i = 0; i < projectilesToShoot; i++)
         {

@@ -23,6 +23,7 @@ public class PlasmaPistol : Weapon
 
     protected override void Fire()
     {
+        gameObject.GetComponentInParent<PlayerSoundFXManager>().FirePistol();
         foreach (Quaternion fireDirection in fireDirections)
         {
             GameObject projectileInstance = Instantiate(projectilePrefab, transform.position + Vector3.up * .3f, fireDirection);
