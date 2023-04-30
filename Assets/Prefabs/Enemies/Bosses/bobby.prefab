@@ -865,6 +865,7 @@ MonoBehaviour:
   timeBetweenShots: 3
   bulletSpeed: 7
   offsetAngle: 15
+  enemyFire: {fileID: 8300000, guid: 1970ad014819a914db5edec5a80574fe, type: 3}
 --- !u!114 &5358039461846246181
 MonoBehaviour:
   m_ObjectHideFlags: 0

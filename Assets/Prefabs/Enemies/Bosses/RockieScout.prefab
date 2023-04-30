@@ -143,6 +143,7 @@ MonoBehaviour:
   timeBetweenShots: 7
   bulletSpeed: 2.5
   offsetAngle: 10
+  enemyFire: {fileID: 8300000, guid: 1970ad014819a914db5edec5a80574fe, type: 3}
 --- !u!195 &7700954247262298220
 NavMeshAgent:
   m_ObjectHideFlags: 0
