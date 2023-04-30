@@ -6,6 +6,7 @@ using UnityEngine;
 public class UISoundInterface : MonoBehaviour
 {
     UISound uiSound;
+
     void Start()
     {
         uiSound = GameObject.Find("UISoundPlayer").GetComponent<UISound>();
@@ -13,16 +14,26 @@ public class UISoundInterface : MonoBehaviour
 
     public void playLevelOne()
     {
-        uiSound.playLevelOne();
+        if (uiSound)
+        {
+            uiSound.playLevelOne();
+        }
     }
 
     public void playLevelTwo()
     {
-        uiSound.playLevelTwo();
+        if (uiSound)
+        {
+            uiSound.playLevelTwo();
+
+        }
     }
 
     public void playLevelThree()
     {
-        uiSound.playLevelThree();
+        if (uiSound)
+        {
+            uiSound.playLevelThree();
+        }
     }
 }

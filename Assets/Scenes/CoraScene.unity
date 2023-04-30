@@ -3414,7 +3414,7 @@ MonoBehaviour:
     numberOfEnemies: 10
   - enemyPrefab: {fileID: 9196879129935289235, guid: d9c556dba490fca4983add6290a06927,
       type: 3}
-    numberOfEnemies: 13
+    numberOfEnemies: 5
   - enemyPrefab: {fileID: 1462720695320296, guid: abc98e2180c949d41986d9b23b62db40,
       type: 3}
     numberOfEnemies: 15
@@ -3429,7 +3429,7 @@ MonoBehaviour:
     numberOfEnemies: 23
   - enemyPrefab: {fileID: 1128758269040250, guid: 6862652aa658eec46b409250b0c4e7b1,
       type: 3}
-    numberOfEnemies: 25
+    numberOfEnemies: 5
   - enemyPrefab: {fileID: 9196879129935289235, guid: 315924071e7623e4f819b756c5be9059,
       type: 3}
     numberOfEnemies: 27
@@ -3444,7 +3444,7 @@ MonoBehaviour:
     numberOfEnemies: 35
   - enemyPrefab: {fileID: 1462720695320296, guid: 32e04029497155441bf07912f730ff8d,
       type: 3}
-    numberOfEnemies: 38
+    numberOfEnemies: 5
   - enemyPrefab: {fileID: 1128758269040250, guid: 08c1a168796583b419b27542525d1860,
       type: 3}
     numberOfEnemies: 40
@@ -3459,7 +3459,7 @@ MonoBehaviour:
     numberOfEnemies: 50
   - enemyPrefab: {fileID: 9196879129935289235, guid: a2c0234b342c9ed4b9e2b97af20deba3,
       type: 3}
-    numberOfEnemies: 55
+    numberOfEnemies: 5
   - enemyPrefab: {fileID: 1462720695320296, guid: 9a01c3ea0738d9649b59277ba281d40e,
       type: 3}
     numberOfEnemies: 60
@@ -3474,7 +3474,7 @@ MonoBehaviour:
     numberOfEnemies: 75
   - enemyPrefab: {fileID: 1128758269040250, guid: af0c5ca2ae8dcea4ab5934d509a66f96,
       type: 3}
-    numberOfEnemies: 80
+    numberOfEnemies: 5
   - enemyPrefab: {fileID: 9196879129935289235, guid: 298a9bab04b02524184382cfec35c981,
       type: 3}
     numberOfEnemies: 85
