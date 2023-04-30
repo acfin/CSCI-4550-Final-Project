@@ -122,9 +122,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2494582264166593126}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 0.005
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -187,7 +187,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.4533286, g: 1, b: 0, a: 1}
-  m_Intensity: 5
+  m_Intensity: 2
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
