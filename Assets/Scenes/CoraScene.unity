@@ -3954,7 +3954,7 @@ MonoBehaviour:
   - {fileID: 7699629241764440350, guid: 5c31c6835f6580e4bbefac5e960a66f0, type: 3}
   - {fileID: 3625918246844665703, guid: 13436bdf7f01ac84abcaf429aad0ac45, type: 3}
   - {fileID: 5087657253786642824, guid: c74af6edd0bce4f4483b7168b793ba63, type: 3}
-  waveLength: 5
+  waveLength: 60
   waveNum: 0
   waveText: {fileID: 5444914224994648829}
   waveHUD: {fileID: 5444914226019260292}

@@ -61,10 +61,10 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        soundfx.TakeDamage();
         animator.SetTrigger("Damage");
         if (!isInvincible)
         {
+            soundfx.TakeDamage();
             health -= damage;
             updateHealthbar();
 
