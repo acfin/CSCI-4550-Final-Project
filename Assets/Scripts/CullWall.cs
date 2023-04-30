@@ -7,7 +7,6 @@ public class CullWall : MonoBehaviour
     [SerializeField] MeshRenderer[] wallMeshes;
     private float fadedAlpha = 0.2f; // Set the desired alpha value for the faded effect
     BoxCollider floor;
-    bool isCulled = false;
 
     void Start()
     {
