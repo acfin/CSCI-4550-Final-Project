@@ -107,7 +107,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.1
+    agentRadius: 0.4
     agentHeight: 1
     agentSlope: 45
     agentClimb: 0.4
@@ -115,7 +115,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.033333335
+    cellSize: 0.13333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -2088,7 +2088,7 @@ MonoBehaviour:
   weapons: []
   playerStats: {fileID: 1994047200}
   hud: {fileID: 716504055}
-  defaultWeapon: {fileID: 1635560974093710476, guid: 0f5dd183509a3ba4c9773e01743d3628,
+  defaultWeapon: {fileID: 6069094661596690049, guid: 1d90ae2020604a24cbc6b3a939b7c535,
     type: 3}
 --- !u!114 &1525888870 stripped
 MonoBehaviour:
