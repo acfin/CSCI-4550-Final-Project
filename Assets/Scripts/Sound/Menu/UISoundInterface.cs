@@ -6,23 +6,43 @@ using UnityEngine;
 public class UISoundInterface : MonoBehaviour
 {
     UISound uiSound;
+
     void Start()
     {
-        uiSound = GameObject.Find("UISoundPlayer").GetComponent<UISound>();
+        // Null reference check if loaded scene is any scene other than MainMenu
+        GameObject uiSoundPlayer = GameObject.Find("UISoundPlayer");
+        if (uiSoundPlayer != null)
+        {
+            uiSound = uiSoundPlayer.GetComponent<UISound>();
+        }
+        else
+        {
+            Debug.LogWarning("UISoundPlayer not found.");
+        }
     }
 
     public void playLevelOne()
     {
-        uiSound.playLevelOne();
+        if (uiSound)
+        {
+            uiSound.playLevelOne();
+        }
     }
 
     public void playLevelTwo()
     {
-        uiSound.playLevelTwo();
+        if (uiSound)
+        {
+            uiSound.playLevelTwo();
+
+        }
     }
 
     public void playLevelThree()
     {
-        uiSound.playLevelThree();
+        if (uiSound)
+        {
+            uiSound.playLevelThree();
+        }
     }
 }

@@ -9,8 +9,7 @@ public class WeaponSelectMenu : MonoBehaviour
     public Weapon plasmaPistolPrefab;
     public Weapon sawLauncherPrefab;
     public Weapon gravityGrenadeLauncherPrefab;
-    public StartingWeapon selectedWeapon;
-    
+
     public void StartGame()
     {
         SceneManager.LoadScene(gameScene);
@@ -18,26 +17,26 @@ public class WeaponSelectMenu : MonoBehaviour
     
     public void PlasmaPistol()
     {
-        selectedWeapon.selectedWeapon = plasmaPistolPrefab;
+        StartingWeapon.Instance.selectedWeapon = plasmaPistolPrefab;
         StartGame();
     }
 
     public void SawLauncher()
     {
-        selectedWeapon.selectedWeapon = sawLauncherPrefab;
+        StartingWeapon.Instance.selectedWeapon = sawLauncherPrefab;
         StartGame();
     }
-    
+
     public void GravityGrenadeLauncher()
     {
-        selectedWeapon.selectedWeapon = gravityGrenadeLauncherPrefab;
+        StartingWeapon.Instance.selectedWeapon = gravityGrenadeLauncherPrefab;
         StartGame();
     }
 
     public void RandomWeapon()
     {
         Weapon[] weapons = new Weapon[] { plasmaPistolPrefab, sawLauncherPrefab, gravityGrenadeLauncherPrefab };
-        selectedWeapon.selectedWeapon = weapons[Random.Range(0, weapons.Length)];
+        StartingWeapon.Instance.selectedWeapon = weapons[Random.Range(0, weapons.Length)];
         StartGame();
     }
 }

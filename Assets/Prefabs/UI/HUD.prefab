@@ -2933,7 +2933,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5444914224369568007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4906,7 +4906,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5444914225181673865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7022,6 +7022,8 @@ MonoBehaviour:
   mainMenuScene: MainMenu
   time: {fileID: 5444914225958486219}
   slain: {fileID: 5444914224560592949}
+  score: {fileID: 0}
+  highScoreText: {fileID: 0}
   timer: {fileID: 5444914225181673870}
 --- !u!1 &5444914226404081722
 GameObject:
