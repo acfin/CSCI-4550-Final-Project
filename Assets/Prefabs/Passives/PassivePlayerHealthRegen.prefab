@@ -47,5 +47,5 @@ MonoBehaviour:
   level: 1
   maxLevel: 5
   passiveName: Regen Boost
-  icon: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
+  icon: {fileID: 21300000, guid: bb67b03c2969d104caba950c446f8c8d, type: 3}
   baseExtraHealthRegenPerSecond: 1

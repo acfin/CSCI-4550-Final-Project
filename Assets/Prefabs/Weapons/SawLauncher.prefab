@@ -47,7 +47,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 7643240703406131071, guid: 696adb2f4c6e0c2499660e13461a823d,
     type: 3}
   weaponName: Saw Launcher
-  icon: {fileID: 21300000, guid: 602b72d4617c3694aa94419fc1b68e04, type: 3}
+  icon: {fileID: 21300000, guid: 27a45cabc3f6f814087c1532f449c1dd, type: 3}
   level: 1
   maxLevel: 7
   baseDamage: 1

@@ -47,5 +47,5 @@ MonoBehaviour:
   level: 1
   maxLevel: 5
   passiveName: Damage Boost
-  icon: {fileID: 21300020, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  icon: {fileID: 21300000, guid: 2a5c892bdd014164da633b8c6fd0f246, type: 3}
   damageIncreasePerLevel: 1

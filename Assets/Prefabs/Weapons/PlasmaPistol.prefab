@@ -47,7 +47,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2494582264166593126, guid: 40b927b55051fed4184e4e1ed8fdde5c,
     type: 3}
   weaponName: Plasma Pistol
-  icon: {fileID: 21300022, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
+  icon: {fileID: 21300000, guid: 48efb35854eda534fb20309bc333060f, type: 3}
   level: 1
   maxLevel: 7
   baseDamage: 1
