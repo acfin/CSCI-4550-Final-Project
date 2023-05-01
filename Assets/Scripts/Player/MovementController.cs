@@ -64,44 +64,40 @@ public class MovementController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Forcefield"))
+        Destroy(other.gameObject);
+        if (other.CompareTag("PowerUp"))
         {
-
             Destroy(other.gameObject);
-            if (other.CompareTag("PowerUp"))
+            if (!hasPowerUp)
             {
-                Destroy(other.gameObject);
-                if (!hasPowerUp)
-                {
-                    hasPowerUp = true;
-                    playerStats.speed += powerUpStrength;
-                    StartCoroutine(SpeedCooldown());
-                }
-                Enemy.speedCount--;
+                hasPowerUp = true;
+                playerStats.speed += powerUpStrength;
+                StartCoroutine(SpeedCooldown());
             }
+            Enemy.speedCount--;
+        }
 
-            if (other.CompareTag("Heal"))
+        if (other.CompareTag("Heal"))
+        {
+            Destroy(other.gameObject);
+            playerStats.health += healAmount;
+            if (playerStats.health > playerStats.maxHealth)
             {
-                Destroy(other.gameObject);
-                playerStats.health += healAmount;
-                if (playerStats.health > playerStats.maxHealth)
-                {
-                    playerStats.health = playerStats.maxHealth;
-                }
-                playerStats.updateHealthbar();
-                Enemy.healingCount--;
+                playerStats.health = playerStats.maxHealth;
             }
+            playerStats.updateHealthbar();
+            Enemy.healingCount--;
+        }
 
-            if (other.CompareTag("Shield"))
+        if (other.CompareTag("Shield"))
+        {
+            Destroy(other.gameObject);
+            if (playerStats.hasShield == false)
             {
-                Destroy(other.gameObject);
-                if (playerStats.hasShield == false)
-                {
-                    playerStats.hasShield = true;
-                    playerStats.shieldHealth = 5;
-                }
-                Enemy.shieldCount--;
+                playerStats.hasShield = true;
+                playerStats.shieldHealth = 5;
             }
+            Enemy.shieldCount--;
         }
     }
 
