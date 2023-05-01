@@ -5993,6 +5993,8 @@ MonoBehaviour:
       m_Calls: []
   gameOverScreen: {fileID: 5444914225464362128}
   enemiesSlain: 0
+  hasShield: 0
+  shieldHealth: 5
 --- !u!114 &1994047201
 MonoBehaviour:
   m_ObjectHideFlags: 0

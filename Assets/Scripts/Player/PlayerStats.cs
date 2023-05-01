@@ -29,6 +29,9 @@ public class PlayerStats : MonoBehaviour
 
     PlayerSoundFXManager soundfx;
 
+    public bool hasShield = false;
+    public int shieldHealth = 5;
+
     public int GetExperienceToLevelUp(int currentLevel) => (int)(Math.Pow(currentLevel, 1.5) * experienceToLevelMod);
 
     public void Start()
@@ -61,24 +64,36 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        animator.SetTrigger("Damage");
-        if (!isInvincible)
+        if (hasShield == true)
         {
-            soundfx.TakeDamage();
-            health -= damage;
-            updateHealthbar();
-
-            if (damageTextManager)
+            shieldHealth--;
+            damageTextManager.DisplayDamage(0);
+            if (shieldHealth == 0)
             {
-                damageTextManager.DisplayDamage(damage);
+                hasShield = false;
             }
-            if (health <= 0)
+        }
+        else
+        {
+            animator.SetTrigger("Damage");
+            if (!isInvincible)
             {
-                // Handle game over here.
-                StartCoroutine(GameOver());
-            }
+                soundfx.TakeDamage();
+                health -= damage;
+                updateHealthbar();
 
-            StartCoroutine(InvincibilityRoutine());
+                if (damageTextManager)
+                {
+                    damageTextManager.DisplayDamage(damage);
+                }
+                if (health <= 0)
+                {
+                    // Handle game over here.
+                    StartCoroutine(GameOver());
+                }
+
+                StartCoroutine(InvincibilityRoutine());
+            }
         }
     }
     private IEnumerator InvincibilityRoutine()
@@ -121,7 +136,7 @@ public class PlayerStats : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    private void updateHealthbar()
+    public void updateHealthbar()
     {
         healthbar.maxValue = maxHealth;
         healthbar.value = health;
