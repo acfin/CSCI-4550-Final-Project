@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
             speedCount++;
         }
 
-        if (!healingSpawned && healingCount < 4 && UnityEngine.Random.value <= 1)
+        if (!healingSpawned && healingCount < 4 && UnityEngine.Random.value <= healingRNG)
         {
             DropHealing();
             bool healingSpawned = true;
